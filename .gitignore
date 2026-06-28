@@ -1,0 +1,20 @@
+# Rust build artifacts
+/tools/converter/target/
+target/
+**/*.rs.bk
+Cargo.lock.orig
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Scratch / temp
+/tmp/
+*.tmp
+
+# NOTE: dist/ IS committed on purpose — it holds the published, ready-to-use
+# exports so consumers can fetch them directly (raw GitHub / jsDelivr). It is
+# fully reproducible from assets/ + catalog/ via `scripts/regen.sh`.

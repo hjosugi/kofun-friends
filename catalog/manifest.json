@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "defaults": {
+    "outdir": "dist"
+  },
+  "assets": [
+    {
+      "source": "assets/kofun/svg/kofun-keyhole.svg",
+      "category": "kofun",
+      "tags": ["kofun", "keyhole", "zenpokoenfun", "burial-mound"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
+        { "op": "sizes", "sizes": [16, 32, 48, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" },
+        { "op": "sizes", "sizes": [256], "format": "webp", "outdir": "dist/kofun" }
+      ]
+    },
+    {
+      "source": "assets/dochicken/svg/dochicken.svg",
+      "category": "dochicken",
+      "tags": ["mascot", "chicken", "dochicken"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
+        { "op": "sizes", "sizes": [16, 32, 48, 64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/kofun/gif/bounce.gif",
+      "category": "kofun",
+      "tags": ["animated", "demo"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 48, "format": "gif", "outdir": "dist/kofun" }
+      ]
+    }
+  ]
+}

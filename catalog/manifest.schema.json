@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/hjosugi/hjosugi-hub/kofun-friends/catalog/manifest.schema.json",
+  "title": "kofun-friends asset catalog manifest",
+  "type": "object",
+  "required": ["version", "assets"],
+  "properties": {
+    "version": { "const": 1 },
+    "defaults": {
+      "type": "object",
+      "properties": {
+        "outdir": { "type": "string", "description": "Base output directory (default: dist)" }
+      },
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/asset" }
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "format": { "enum": ["png", "jpeg", "webp", "gif", "bmp", "tiff", "ico"] },
+    "asset": {
+      "type": "object",
+      "required": ["source", "outputs"],
+      "properties": {
+        "source": { "type": "string", "description": "Path to the authored source asset" },
+        "category": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "license": { "type": "string", "description": "SPDX id or license name; CI warns if missing" },
+        "outputs": { "type": "array", "items": { "$ref": "#/definitions/output" } }
+      },
+      "additionalProperties": false
+    },
+    "output": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["op"],
+          "properties": {
+            "op": { "const": "resize" },
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 },
+            "scale": { "type": "number", "exclusiveMinimum": 0 },
+            "exact": { "type": "boolean" },
+            "format": { "$ref": "#/definitions/format" },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op", "format"],
+          "properties": {
+            "op": { "const": "convert" },
+            "format": { "$ref": "#/definitions/format" },
+            "quality": { "type": "integer", "minimum": 1, "maximum": 100 },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op"],
+          "properties": {
+            "op": { "const": "rasterize" },
+            "width": { "type": "integer", "minimum": 1 },
+            "height": { "type": "integer", "minimum": 1 },
+            "scale": { "type": "number", "exclusiveMinimum": 0 },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op", "sizes"],
+          "properties": {
+            "op": { "const": "sizes" },
+            "sizes": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 1 },
+            "format": { "$ref": "#/definitions/format" },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

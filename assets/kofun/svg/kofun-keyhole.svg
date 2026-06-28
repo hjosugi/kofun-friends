@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 前方後円墳 (keyhole-shaped kofun) — kofun-friends sample asset -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="keyhole-shaped kofun">
+  <defs>
+    <radialGradient id="moss" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#9ccc65"/>
+      <stop offset="100%" stop-color="#558b2f"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" fill="#cfe8f3"/>
+  <!-- water moat -->
+  <ellipse cx="128" cy="150" rx="110" ry="80" fill="#7ec8e3"/>
+  <!-- the keyhole mound: trapezoid (front) + circle (rear) -->
+  <g fill="url(#moss)" stroke="#33691e" stroke-width="3" stroke-linejoin="round">
+    <path d="M88 200 L168 200 L150 150 L106 150 Z"/>
+    <circle cx="128" cy="110" r="56"/>
+  </g>
+  <!-- contour lines -->
+  <g fill="none" stroke="#33691e" stroke-width="1.5" opacity="0.5">
+    <circle cx="128" cy="110" r="38"/>
+    <circle cx="128" cy="110" r="20"/>
+  </g>
+</svg>

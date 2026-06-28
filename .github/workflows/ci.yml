@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  converter:
+    name: build & lint converter
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tools/converter
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/converter
+      - run: cargo fmt --check
+      - run: cargo clippy --all-targets -- -D warnings
+      - run: cargo build --release
+
+  dist-reproducible:
+    name: dist is reproducible from assets
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: tools/converter
+      - name: Regenerate dist/
+        run: bash scripts/regen.sh
+      - name: Fail if dist/ drifted from committed output
+        run: |
+          if [ -n "$(git status --porcelain dist)" ]; then
+            echo "::error::dist/ is out of date — run scripts/regen.sh and commit."
+            git --no-pager diff --stat dist
+            exit 1
+          fi
