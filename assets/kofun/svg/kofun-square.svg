@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 方墳 (square kofun) — kofun-friends asset -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-label="square kofun">
+  <defs>
+    <linearGradient id="moss-s" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9ccc65"/>
+      <stop offset="100%" stop-color="#558b2f"/>
+    </linearGradient>
+  </defs>
+  <rect width="256" height="256" fill="#cfe8f3"/>
+  <ellipse cx="128" cy="152" rx="104" ry="72" fill="#7ec8e3"/>
+  <!-- truncated pyramid: outer base + inner top -->
+  <polygon points="48,184 208,184 168,92 88,92" fill="url(#moss-s)" stroke="#33691e" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="88,92 168,92 152,64 104,64" fill="#aed581" stroke="#33691e" stroke-width="2" stroke-linejoin="round"/>
+  <g fill="none" stroke="#33691e" stroke-width="1.5" opacity="0.45">
+    <polygon points="68,160 188,160 158,98 98,98"/>
+  </g>
+</svg>

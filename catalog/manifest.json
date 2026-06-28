@@ -16,6 +16,26 @@
       ]
     },
     {
+      "source": "assets/kofun/svg/kofun-round.svg",
+      "category": "kofun",
+      "tags": ["kofun", "round", "enpun", "burial-mound"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
+        { "op": "sizes", "sizes": [32, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" }
+      ]
+    },
+    {
+      "source": "assets/kofun/svg/kofun-square.svg",
+      "category": "kofun",
+      "tags": ["kofun", "square", "hofun", "burial-mound"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
+        { "op": "sizes", "sizes": [32, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" }
+      ]
+    },
+    {
       "source": "assets/dochicken/svg/dochicken.svg",
       "category": "dochicken",
       "tags": ["mascot", "chicken", "dochicken"],
@@ -23,6 +43,98 @@
       "outputs": [
         { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
         { "op": "sizes", "sizes": [16, 32, 48, 64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/dochicken/svg/dochicken-wink.svg",
+      "category": "dochicken",
+      "tags": ["mascot", "chicken", "dochicken", "wink"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
+        { "op": "sizes", "sizes": [64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/dochicken/svg/dochicken-love.svg",
+      "category": "dochicken",
+      "tags": ["mascot", "chicken", "dochicken", "love", "heart"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
+        { "op": "sizes", "sizes": [64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/haniwa.svg",
+      "category": "emoji",
+      "tags": ["emoji", "haniwa", "kofun"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/magatama.svg",
+      "category": "emoji",
+      "tags": ["emoji", "magatama", "jade", "kofun"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/egg.svg",
+      "category": "emoji",
+      "tags": ["emoji", "egg", "dochicken"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/download.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "download"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/search.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "search"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/tag.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "tag"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/cursors/svg/pointer.svg",
+      "category": "cursors",
+      "tags": ["cursor", "pointer", "arrow"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" }
+      ]
+    },
+    {
+      "source": "assets/cursors/svg/hand.svg",
+      "category": "cursors",
+      "tags": ["cursor", "hand", "pointing"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" }
       ]
     },
     {

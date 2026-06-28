@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- pointer cursor (hotspot at 0,0 top-left) — kofun-friends -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="pointer cursor">
+  <path d="M4 2 L4 26 L11 19 L15 28 L19 26 L15 17 L25 17 Z"
+        fill="#ffffff" stroke="#33691e" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>

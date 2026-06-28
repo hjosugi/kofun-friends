@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- たまご (egg) emoji — dochicken themed — kofun-friends -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="egg">
+  <rect width="128" height="128" fill="none"/>
+  <defs>
+    <radialGradient id="shell" cx="42%" cy="36%" r="70%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fff3c4"/>
+    </radialGradient>
+  </defs>
+  <path d="M64 22 C40 22 30 64 30 84 a34 34 0 0 0 68 0 C98 64 88 22 64 22 Z"
+        fill="url(#shell)" stroke="#e0a800" stroke-width="3"/>
+  <!-- little crack -->
+  <path d="M48 70 l8 -6 l4 8 l8 -6 l5 7" fill="none" stroke="#e0a800" stroke-width="2.5" stroke-linejoin="round" opacity="0.7"/>
+</svg>
