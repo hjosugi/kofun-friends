@@ -9,6 +9,7 @@
 //!   batch      Process a directory tree driven by a catalog manifest.
 
 mod cli;
+mod cursor;
 mod manifest;
 mod raster;
 mod svg;
@@ -25,6 +26,8 @@ fn main() -> anyhow::Result<()> {
         Command::Rasterize(a) => svg::rasterize(&a),
         Command::Sizes(a) => raster::sizes(&a),
         Command::Info(a) => raster::info(&a),
+        Command::Cur(a) => cursor::cur(&a),
+        Command::Ani(a) => cursor::ani(&a),
         Command::Batch(a) => manifest::run_batch(&a),
     }
 }

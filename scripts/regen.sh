@@ -12,6 +12,9 @@ BIN="$(cargo metadata --no-deps --format-version 1 \
   --manifest-path tools/converter/Cargo.toml \
   | python3 -c 'import json,sys;print(json.load(sys.stdin)["target_directory"])')/release/kofun-convert"
 
+echo ">> cleaning dist/ (preserving .gitkeep)…"
+find dist -type f ! -name '.gitkeep' -delete 2>/dev/null || true
+
 echo ">> regenerating dist/ from catalog/manifest.json…"
 "$BIN" batch --manifest catalog/manifest.json
 

@@ -1,8 +1,14 @@
 # kofun-friends 🏯🐔
 
-古墳（kofun）や **ドチキンさん** などのキャラクター素材を一元管理するアセットリポジトリです。
-SVG / PNG / GIF・絵文字セット・マウスカーソルなどを置き、**Rust製ネイティブ converter** で
-リサイズ・フォーマット変換・SVGラスタライズ・複数サイズ書き出しを行います。
+**古墳くん (Kofun-kun)** や **ドチキンさん (Dochicken-san)** などのキャラクター素材を一元管理する
+アセットリポジトリです。ドット絵スプライト・SVG・PNG・GIF・絵文字セット・マウスカーソルなどを置き、
+**Rust製ネイティブ converter** でリサイズ・フォーマット変換・SVGラスタライズ・複数サイズ書き出し・
+**Windowsカーソル (.cur/.ani) 書き出し** を行います。
+
+主役キャラ（[本家 hjosugi-hub](https://github.com/hjosugi/hjosugi-hub) に準拠）:
+
+- **古墳くん** 🟢 — 前方後円墳の姿をしたミドリムシ好きの子ども。ドット絵 (idle/blink/smile/munch)
+- **ドチキンさん** 🐔 — 鶏の姿をした埴輪。古墳くんの遊び友達。ドット絵 (idle/blink/peck)
 
 > 関連: [hjosugi/hjosugi-hub](https://github.com/hjosugi/hjosugi-hub)
 
@@ -16,7 +22,10 @@ SVG / PNG / GIF・絵文字セット・マウスカーソルなどを置き、**
 | 画像のサイズ変換 | `kofun-convert resize foo.png --width 128` |
 | フォーマット変換 (png↔webp↔jpg…) | `kofun-convert convert foo.png --to webp` |
 | 絵文字/アイコンセットを一括書き出し | `kofun-convert sizes foo.svg --sizes 16,32,48,128` |
+| ドット絵をクリスプに拡大 | `kofun-convert sizes pixel.png --sizes 96,192 --filter nearest` |
 | GIFアニメをサイズ変換（フレーム保持） | `kofun-convert resize anim.gif --width 48` |
+| Windows静的カーソル (.cur) | `kofun-convert cur pointer.svg --hotspot-x 4 --hotspot-y 2` |
+| Windowsアニメカーソル (.ani) | `kofun-convert ani kofun-kun.gif --size 48` |
 | カタログから全部生成 | `kofun-convert batch` |
 
 ---
@@ -26,12 +35,13 @@ SVG / PNG / GIF・絵文字セット・マウスカーソルなどを置き、**
 ```
 kofun-friends/
 ├── assets/                 # ★ オリジナル素材（source of truth）のみを置く
-│   ├── kofun/              #   カテゴリごと
-│   │   ├── svg/            #     ← まずここに SVG を置くのが基本
-│   │   ├── png/            #     手描き/撮影など SVG 由来でないラスタ原本
+│   ├── kofun/              #   古墳くん
+│   │   ├── pixel/          #     ドット絵スプライト原本 (PNG, 24x24)
+│   │   ├── svg/            #     ベクター原本
+│   │   ├── png/            #     SVG由来でないラスタ原本
 │   │   ├── gif/            #     アニメGIF原本
 │   │   └── raw/            #     .ai/.psd/.kra など編集用ソース
-│   ├── dochicken/          #   ドチキンさん
+│   ├── dochicken/          #   ドチキンさん（pixel/svg/png/gif/raw）
 │   ├── emoji/              #   絵文字セット (svg/png/gif)
 │   ├── cursors/            #   マウスカーソル (svg/png/ani)
 │   └── icons/              #   汎用アイコン (svg/png)
@@ -46,7 +56,9 @@ kofun-friends/
 ├── tools/converter/        # ★ Rust製ネイティブ converter (kofun-convert)
 │   ├── src/  Cargo.toml  README.md
 │
-├── scripts/                # 補助スクリプト（再生成・新規素材追加など）
+├── scripts/                # 補助スクリプト
+│   ├── regen.sh            #   dist/ をまるごと再生成
+│   └── gen_sprites.py      #   ドット絵スプライト生成（ASCIIグリッド→PNG）
 ├── docs/                   # ドキュメント
 └── .github/workflows/      # CI（converterのビルド + dist再現性チェック）
 ```
@@ -54,7 +66,9 @@ kofun-friends/
 設計方針（アセット管理のベストプラクティス）:
 
 1. **ソースと成果物を分離** — 人間が編集する原本は `assets/`、機械生成物は `dist/`。
-2. **SVG を第一級ソースに** — ベクターで持ち、必要なサイズ/形式は都度生成。
+2. **ベクターは SVG、ドット絵は PNG を原本に** — スケーラブルな絵は SVG、ドット絵は
+   native解像度PNG（`--filter nearest` でクリスプに拡大）。古墳くん/ドチキンさんの
+   スプライトは [scripts/gen_sprites.py](scripts/gen_sprites.py)（ASCIIグリッド+パレット）で生成。
 3. **カタログ駆動** — 何をどう書き出すかを `catalog/manifest.json` に集約し再現可能に。
 4. **ライセンス明記** — 各素材に `license` を付与（未指定は CI が警告）。
 5. **dist は再生成可能** — `scripts/regen.sh` でいつでも `assets/` から作り直せる。

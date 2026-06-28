@@ -28,6 +28,10 @@ pub enum Command {
     Sizes(SizesArgs),
     /// Print metadata about an image.
     Info(InfoArgs),
+    /// Build a Windows static cursor (.cur) from an SVG/raster.
+    Cur(CurArgs),
+    /// Build a Windows animated cursor (.ani) from an animated GIF.
+    Ani(AniArgs),
     /// Process a directory tree driven by a catalog manifest.
     Batch(BatchArgs),
 }
@@ -60,7 +64,8 @@ impl OutFormat {
 }
 
 /// Resampling filter used when scaling raster images.
-#[derive(ValueEnum, Clone, Copy, Debug, Default)]
+#[derive(ValueEnum, Clone, Copy, Debug, Default, Deserialize)]
+#[serde(rename_all = "lowercase")]
 pub enum Filter {
     Nearest,
     Triangle,
@@ -167,6 +172,45 @@ pub struct SizesArgs {
 pub struct InfoArgs {
     /// Input image path.
     pub input: PathBuf,
+}
+
+#[derive(Args, Debug)]
+pub struct CurArgs {
+    /// Input SVG or raster image.
+    pub input: PathBuf,
+    /// Output .cur path. Defaults next to input.
+    #[arg(short, long)]
+    pub output: Option<PathBuf>,
+    /// Square size(s) to embed. Hotspot is given for the first size and scaled.
+    #[arg(short, long, value_delimiter = ',', default_value = "32")]
+    pub sizes: Vec<u32>,
+    /// Hotspot X in pixels (at the first --sizes value).
+    #[arg(long, default_value_t = 0)]
+    pub hotspot_x: u32,
+    /// Hotspot Y in pixels (at the first --sizes value).
+    #[arg(long, default_value_t = 0)]
+    pub hotspot_y: u32,
+}
+
+#[derive(Args, Debug)]
+pub struct AniArgs {
+    /// Input animated GIF.
+    pub input: PathBuf,
+    /// Output .ani path. Defaults next to input.
+    #[arg(short, long)]
+    pub output: Option<PathBuf>,
+    /// Square frame size in pixels.
+    #[arg(short, long, default_value_t = 32)]
+    pub size: u32,
+    /// Hotspot X in pixels.
+    #[arg(long, default_value_t = 0)]
+    pub hotspot_x: u32,
+    /// Hotspot Y in pixels.
+    #[arg(long, default_value_t = 0)]
+    pub hotspot_y: u32,
+    /// Force a constant frame rate (fps). Default: use the GIF's frame delays.
+    #[arg(long)]
+    pub fps: Option<u32>,
 }
 
 #[derive(Args, Debug)]

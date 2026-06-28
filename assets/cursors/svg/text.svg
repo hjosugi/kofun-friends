@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- text (I-beam) cursor (hotspot at center ~16,16) — kofun-friends -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="text cursor">
+  <g fill="none" stroke="#33691e" stroke-width="2.4" stroke-linecap="round">
+    <path d="M16 6 V26"/>
+    <path d="M12 6 h8 M12 26 h8"/>
+  </g>
+</svg>

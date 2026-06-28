@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- copy icon — kofun-friends -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="copy">
+  <g fill="none" stroke="#33691e" stroke-width="2" stroke-linejoin="round">
+    <rect x="9" y="9" width="11" height="11" rx="2"/>
+    <path d="M5 15 H4 a1 1 0 0 1 -1 -1 V4 a1 1 0 0 1 1 -1 h10 a1 1 0 0 1 1 1 v1"/>
+  </g>
+</svg>

@@ -5,66 +5,89 @@
   },
   "assets": [
     {
-      "source": "assets/kofun/svg/kofun-keyhole.svg",
+      "source": "assets/kofun/pixel/kofun-kun-idle.png",
       "category": "kofun",
-      "tags": ["kofun", "keyhole", "zenpokoenfun", "burial-mound"],
+      "tags": ["kofun-kun", "mascot", "pixel", "idle"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
-        { "op": "sizes", "sizes": [16, 32, 48, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" },
-        { "op": "sizes", "sizes": [256], "format": "webp", "outdir": "dist/kofun" }
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/kofun" }
       ]
     },
     {
-      "source": "assets/kofun/svg/kofun-round.svg",
+      "source": "assets/kofun/pixel/kofun-kun-blink.png",
       "category": "kofun",
-      "tags": ["kofun", "round", "enpun", "burial-mound"],
+      "tags": ["kofun-kun", "mascot", "pixel", "blink"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
-        { "op": "sizes", "sizes": [32, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" }
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/kofun" }
       ]
     },
     {
-      "source": "assets/kofun/svg/kofun-square.svg",
+      "source": "assets/kofun/pixel/kofun-kun-smile.png",
       "category": "kofun",
-      "tags": ["kofun", "square", "hofun", "burial-mound"],
+      "tags": ["kofun-kun", "mascot", "pixel", "smile"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/kofun" },
-        { "op": "sizes", "sizes": [32, 64, 128, 256, 512], "format": "png", "outdir": "dist/kofun" }
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/kofun" }
       ]
     },
     {
-      "source": "assets/dochicken/svg/dochicken.svg",
-      "category": "dochicken",
-      "tags": ["mascot", "chicken", "dochicken"],
+      "source": "assets/kofun/pixel/kofun-kun-munch.png",
+      "category": "kofun",
+      "tags": ["kofun-kun", "mascot", "pixel", "munch", "euglena"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
-        { "op": "sizes", "sizes": [16, 32, 48, 64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/kofun" }
       ]
     },
     {
-      "source": "assets/dochicken/svg/dochicken-wink.svg",
-      "category": "dochicken",
-      "tags": ["mascot", "chicken", "dochicken", "wink"],
+      "source": "assets/kofun/gif/kofun-kun.gif",
+      "category": "kofun",
+      "tags": ["kofun-kun", "mascot", "animated"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
-        { "op": "sizes", "sizes": [64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/kofun" },
+        { "op": "ani", "size": 48, "hotspot_x": 24, "hotspot_y": 24, "outdir": "dist/cursors" }
       ]
     },
     {
-      "source": "assets/dochicken/svg/dochicken-love.svg",
+      "source": "assets/dochicken/pixel/dochicken-san-idle.png",
       "category": "dochicken",
-      "tags": ["mascot", "chicken", "dochicken", "love", "heart"],
+      "tags": ["dochicken-san", "mascot", "pixel", "haniwa", "idle"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "rasterize", "width": 1024, "outdir": "dist/dochicken" },
-        { "op": "sizes", "sizes": [64, 128, 256, 512], "format": "png", "outdir": "dist/dochicken" }
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/dochicken" }
       ]
     },
+    {
+      "source": "assets/dochicken/pixel/dochicken-san-blink.png",
+      "category": "dochicken",
+      "tags": ["dochicken-san", "mascot", "pixel", "blink"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/dochicken/pixel/dochicken-san-peck.png",
+      "category": "dochicken",
+      "tags": ["dochicken-san", "mascot", "pixel", "peck"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [24, 48, 96, 192], "format": "png", "filter": "nearest", "outdir": "dist/dochicken" }
+      ]
+    },
+    {
+      "source": "assets/dochicken/gif/dochicken-san.gif",
+      "category": "dochicken",
+      "tags": ["dochicken-san", "mascot", "animated"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/dochicken" },
+        { "op": "ani", "size": 48, "hotspot_x": 24, "hotspot_y": 44, "outdir": "dist/cursors" }
+      ]
+    },
+
     {
       "source": "assets/emoji/svg/haniwa.svg",
       "category": "emoji",
@@ -93,6 +116,43 @@
       ]
     },
     {
+      "source": "assets/emoji/svg/mirror.svg",
+      "category": "emoji",
+      "tags": ["emoji", "mirror", "dokyo", "kofun"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/sword.svg",
+      "category": "emoji",
+      "tags": ["emoji", "sword", "tekken", "kofun"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/dogu.svg",
+      "category": "emoji",
+      "tags": ["emoji", "dogu", "clay-figurine"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/sparkle.svg",
+      "category": "emoji",
+      "tags": ["emoji", "sparkle", "kirakira"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+
+    {
       "source": "assets/icons/svg/download.svg",
       "category": "icons",
       "tags": ["icon", "ui", "download"],
@@ -120,12 +180,59 @@
       ]
     },
     {
+      "source": "assets/icons/svg/heart.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "heart", "like"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/star.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "star", "favorite"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/copy.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "copy"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/link.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "link"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+    {
+      "source": "assets/icons/svg/folder.svg",
+      "category": "icons",
+      "tags": ["icon", "ui", "folder"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [16, 24, 32, 48], "format": "png", "outdir": "dist/icons" }
+      ]
+    },
+
+    {
       "source": "assets/cursors/svg/pointer.svg",
       "category": "cursors",
       "tags": ["cursor", "pointer", "arrow"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" }
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 4, "hotspot_y": 2, "outdir": "dist/cursors" }
       ]
     },
     {
@@ -134,16 +241,28 @@
       "tags": ["cursor", "hand", "pointing"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" }
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 12, "hotspot_y": 2, "outdir": "dist/cursors" }
       ]
     },
     {
-      "source": "assets/kofun/gif/bounce.gif",
-      "category": "kofun",
-      "tags": ["animated", "demo"],
+      "source": "assets/cursors/svg/text.svg",
+      "category": "cursors",
+      "tags": ["cursor", "text", "ibeam"],
       "license": "CC-BY-4.0",
       "outputs": [
-        { "op": "resize", "width": 48, "format": "gif", "outdir": "dist/kofun" }
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 16, "hotspot_y": 16, "outdir": "dist/cursors" }
+      ]
+    },
+    {
+      "source": "assets/cursors/svg/grab.svg",
+      "category": "cursors",
+      "tags": ["cursor", "grab", "open-hand"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 16, "hotspot_y": 14, "outdir": "dist/cursors" }
       ]
     }
   ]

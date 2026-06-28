@@ -21,6 +21,7 @@
   "additionalProperties": false,
   "definitions": {
     "format": { "enum": ["png", "jpeg", "webp", "gif", "bmp", "tiff", "ico"] },
+    "filter": { "enum": ["nearest", "triangle", "catmullrom", "gaussian", "lanczos3"] },
     "asset": {
       "type": "object",
       "required": ["source", "outputs"],
@@ -45,6 +46,7 @@
             "scale": { "type": "number", "exclusiveMinimum": 0 },
             "exact": { "type": "boolean" },
             "format": { "$ref": "#/definitions/format" },
+            "filter": { "$ref": "#/definitions/filter" },
             "outdir": { "type": "string" }
           },
           "additionalProperties": false
@@ -79,6 +81,32 @@
             "op": { "const": "sizes" },
             "sizes": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 1 },
             "format": { "$ref": "#/definitions/format" },
+            "filter": { "$ref": "#/definitions/filter" },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op"],
+          "properties": {
+            "op": { "const": "cur" },
+            "sizes": { "type": "array", "items": { "type": "integer", "minimum": 1 }, "minItems": 1 },
+            "hotspot_x": { "type": "integer", "minimum": 0 },
+            "hotspot_y": { "type": "integer", "minimum": 0 },
+            "outdir": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["op"],
+          "properties": {
+            "op": { "const": "ani" },
+            "size": { "type": "integer", "minimum": 1 },
+            "hotspot_x": { "type": "integer", "minimum": 0 },
+            "hotspot_y": { "type": "integer", "minimum": 0 },
+            "fps": { "type": "integer", "minimum": 1 },
             "outdir": { "type": "string" }
           },
           "additionalProperties": false

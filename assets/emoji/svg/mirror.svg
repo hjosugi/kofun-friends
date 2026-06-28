@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 銅鏡 (bronze mirror) emoji — kofun-friends -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="bronze mirror">
+  <rect width="128" height="128" fill="none"/>
+  <defs>
+    <radialGradient id="bronze" cx="42%" cy="38%" r="70%">
+      <stop offset="0%" stop-color="#cdae74"/>
+      <stop offset="100%" stop-color="#8d6e3a"/>
+    </radialGradient>
+  </defs>
+  <circle cx="64" cy="64" r="44" fill="url(#bronze)" stroke="#5d4524" stroke-width="3"/>
+  <circle cx="64" cy="64" r="34" fill="none" stroke="#5d4524" stroke-width="2" opacity="0.6"/>
+  <!-- central knob -->
+  <circle cx="64" cy="64" r="8" fill="#5d4524"/>
+  <!-- radial decoration -->
+  <g stroke="#5d4524" stroke-width="2" opacity="0.7">
+    <path d="M64 30 v8 M64 90 v8 M30 64 h8 M90 64 h8"/>
+    <path d="M42 42 l5 5 M86 42 l-5 5 M42 86 l5 -5 M86 86 l-5 -5"/>
+  </g>
+</svg>

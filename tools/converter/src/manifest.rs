@@ -4,7 +4,8 @@
 //! and the derived outputs that should be generated into `dist/`. This keeps the
 //! source tree authoritative and the generated tree reproducible.
 
-use crate::cli::{BatchArgs, Filter, OutFormat};
+use crate::cli::{AniArgs, BatchArgs, CurArgs, Filter, OutFormat};
+use crate::cursor;
 use crate::raster;
 use crate::svg;
 use crate::util;
@@ -59,6 +60,8 @@ pub enum Output {
         exact: bool,
         #[serde(default)]
         format: Option<OutFormat>,
+        #[serde(default)]
+        filter: Option<Filter>,
         outdir: Option<String>,
     },
     Convert {
@@ -80,8 +83,37 @@ pub enum Output {
         sizes: Vec<u32>,
         #[serde(default = "default_png")]
         format: OutFormat,
+        #[serde(default)]
+        filter: Option<Filter>,
         outdir: Option<String>,
     },
+    Cur {
+        #[serde(default = "default_cur_sizes")]
+        sizes: Vec<u32>,
+        #[serde(default)]
+        hotspot_x: u32,
+        #[serde(default)]
+        hotspot_y: u32,
+        outdir: Option<String>,
+    },
+    Ani {
+        #[serde(default = "default_ani_size")]
+        size: u32,
+        #[serde(default)]
+        hotspot_x: u32,
+        #[serde(default)]
+        hotspot_y: u32,
+        #[serde(default)]
+        fps: Option<u32>,
+        outdir: Option<String>,
+    },
+}
+
+fn default_cur_sizes() -> Vec<u32> {
+    vec![32]
+}
+fn default_ani_size() -> u32 {
+    32
 }
 
 fn default_quality() -> u8 {
@@ -169,6 +201,7 @@ fn process_asset(asset: &Asset, base_outdir: &str, dry_run: bool) -> Result<()> 
                 scale,
                 exact,
                 format,
+                filter,
                 outdir,
             } => {
                 let fmt = format.unwrap_or(infer_format(&asset.source));
@@ -178,13 +211,14 @@ fn process_asset(asset: &Asset, base_outdir: &str, dry_run: bool) -> Result<()> 
                 if dry_run {
                     continue;
                 }
+                let f = filter.unwrap_or_default().to_image();
                 let img = image::open(&asset.source)?;
                 let (tw, th) =
                     util::target_dims(img.width(), img.height(), *width, *height, *scale, *exact)?;
                 let scaled = if *exact && width.is_some() && height.is_some() {
-                    img.resize_exact(tw, th, Filter::default().to_image())
+                    img.resize_exact(tw, th, f)
                 } else {
-                    img.resize(tw, th, Filter::default().to_image())
+                    img.resize(tw, th, f)
                 };
                 raster::encode(&scaled, &dest, fmt, 90)?;
             }
@@ -221,9 +255,11 @@ fn process_asset(asset: &Asset, base_outdir: &str, dry_run: bool) -> Result<()> 
             Output::Sizes {
                 sizes,
                 format,
+                filter,
                 outdir,
             } => {
                 let dest_dir = resolve_dir(outdir.as_deref(), base_outdir);
+                let f = filter.unwrap_or_default().to_image();
                 for &s in sizes {
                     let dest = dest_dir.join(format!("{stem}_{s}.{}", format.ext()));
                     log_plan("sizes", &asset.source, &dest, dry_run);
@@ -238,10 +274,52 @@ fn process_asset(asset: &Asset, base_outdir: &str, dry_run: bool) -> Result<()> 
                             None,
                         )?)
                     } else {
-                        image::open(&asset.source)?.resize(s, s, Filter::default().to_image())
+                        image::open(&asset.source)?.resize(s, s, f)
                     };
                     raster::encode(&img, &dest, *format, 90)?;
                 }
+            }
+            Output::Cur {
+                sizes,
+                hotspot_x,
+                hotspot_y,
+                outdir,
+            } => {
+                let dest_dir = resolve_dir(outdir.as_deref(), base_outdir);
+                let dest = dest_dir.join(format!("{stem}.cur"));
+                log_plan("cur", &asset.source, &dest, dry_run);
+                if dry_run {
+                    continue;
+                }
+                cursor::cur(&CurArgs {
+                    input: asset.source.clone(),
+                    output: Some(dest),
+                    sizes: sizes.clone(),
+                    hotspot_x: *hotspot_x,
+                    hotspot_y: *hotspot_y,
+                })?;
+            }
+            Output::Ani {
+                size,
+                hotspot_x,
+                hotspot_y,
+                fps,
+                outdir,
+            } => {
+                let dest_dir = resolve_dir(outdir.as_deref(), base_outdir);
+                let dest = dest_dir.join(format!("{stem}.ani"));
+                log_plan("ani", &asset.source, &dest, dry_run);
+                if dry_run {
+                    continue;
+                }
+                cursor::ani(&AniArgs {
+                    input: asset.source.clone(),
+                    output: Some(dest),
+                    size: *size,
+                    hotspot_x: *hotspot_x,
+                    hotspot_y: *hotspot_y,
+                    fps: *fps,
+                })?;
             }
         }
     }

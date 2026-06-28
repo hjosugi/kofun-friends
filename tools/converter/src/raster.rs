@@ -10,7 +10,7 @@ use std::fs::File;
 use std::io::{BufReader, BufWriter};
 use std::path::Path;
 
-fn is_gif(path: &Path) -> bool {
+pub fn is_gif(path: &Path) -> bool {
     path.extension()
         .and_then(|e| e.to_str())
         .map(|e| e.eq_ignore_ascii_case("gif"))

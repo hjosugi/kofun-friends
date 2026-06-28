@@ -51,6 +51,22 @@ kofun-convert info in.png    # format / size / bytes / frames(GIF)
 kofun-convert info in.svg    # intrinsic size
 ```
 
+### `cur` — Windows静的カーソル (.cur)
+```bash
+kofun-convert cur pointer.svg --sizes 32 --hotspot-x 4 --hotspot-y 2
+kofun-convert cur hand.svg   --sizes 32,48 --hotspot-x 12 --hotspot-y 2 -o hand.cur
+```
+SVG/ラスタから生成。`--sizes` を複数指定するとマルチサイズ `.cur` になり、
+ホットスポットは先頭サイズ基準で各サイズへ自動スケールします。
+
+### `ani` — Windowsアニメーションカーソル (.ani)
+```bash
+kofun-convert ani kofun-kun.gif --size 48 --hotspot-x 24 --hotspot-y 24
+kofun-convert ani spin.gif      --size 32 --fps 12 -o spin.ani
+```
+アニメーションGIFの各フレームを `.cur` 化して RIFF/ACON にまとめます。
+フレーム間隔は既定でGIFのdelayを継承（`--fps` で固定可）。
+
 ### `batch` — カタログ駆動で一括生成
 ```bash
 kofun-convert batch                          # catalog/manifest.json を実行
@@ -66,7 +82,8 @@ kofun-convert batch --dry-run                # 生成計画だけ表示
 ## マニフェスト形式
 
 `catalog/manifest.json` のスキーマは [`catalog/manifest.schema.json`](../../catalog/manifest.schema.json) を参照。
-各 `op` は `resize` / `convert` / `rasterize` / `sizes` のいずれか。
+各 `op` は `resize` / `convert` / `rasterize` / `sizes` / `cur` / `ani` のいずれか。
+`resize` と `sizes` は `"filter": "nearest"` を指定でき、ドット絵の拡大に使います。
 
 ## 設計メモ
 
