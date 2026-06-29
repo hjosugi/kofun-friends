@@ -225,6 +225,15 @@
       ]
     },
     {
+      "source": "assets/backgrounds/svg/cactus-greenhouse.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "cactus", "greenhouse"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
       "source": "assets/backgrounds/svg/background-board.svg",
       "category": "backgrounds",
       "tags": ["background", "pixel", "cyberpunk", "contact-sheet"],
@@ -364,6 +373,15 @@
       "source": "assets/emoji/svg/subesube-manjugani.svg",
       "category": "emoji",
       "tags": ["emoji", "subesube-manjugani", "smooth-manjugani-crab", "crab"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
+      ]
+    },
+    {
+      "source": "assets/emoji/svg/cactus.svg",
+      "category": "emoji",
+      "tags": ["emoji", "cactus", "saboten", "plant", "desert"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }

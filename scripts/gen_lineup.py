@@ -30,9 +30,10 @@ BG = P.BG
 ACCENT = P.ACCENT
 ACCENT2 = P.ACCENT2
 ORANGE = P.ORANGE
-MUTED = "#86a99c"
-LINE = "#24443a"
-TEXT = "#d9f7ea"
+MUTED = "#9aa8c8"
+MUTED = "#9aa8c8"
+LINE = "#2a2445"
+TEXT = "#e8e8ff"
 
 
 # ---- rect emitters ---------------------------------------------------------
@@ -198,10 +199,10 @@ def cast_svg():
     MAGENTA = P.CORAL
     defs = (
         '<linearGradient id="bgwash" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#081a18"/><stop offset="0.6" stop-color="{BG}"/>'
-        f'<stop offset="1" stop-color="#0b0712"/></linearGradient>'
+        f'<stop offset="0" stop-color="#12101e"/><stop offset="0.6" stop-color="{BG}"/>'
+        f'<stop offset="1" stop-color="#1c1830"/></linearGradient>'
         '<linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#10211d"/><stop offset="1" stop-color="#081310"/>'
+        f'<stop offset="0" stop-color="#0d2240"/><stop offset="1" stop-color="#0a0a14"/>'
         "</linearGradient>"
         '<radialGradient id="glowK" cx="0.5" cy="0.5" r="0.5">'
         f'<stop offset="0" stop-color="{ACCENT}" stop-opacity="0.45"/>'
@@ -260,7 +261,7 @@ def cast_svg():
         r += text_centered(name, sx + stage_w // 2, stage_y + stage_w + 22, 6, color)
 
     # item strip along the bottom
-    items = ["haniwa", "uribo", "penguin", "moai", "pyramid", "subesube-manjugani"]
+    items = ["haniwa", "uribo", "penguin", "moai", "pyramid", "subesube-manjugani", "cactus"]
     iscale = 5
     isz = P.N * iscale
     igap = 26
@@ -281,10 +282,10 @@ def grid_svg():
     W, H = 1280, 720
     defs = (
         '<linearGradient id="bgwash2" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#081a18"/><stop offset="0.6" stop-color="{BG}"/>'
-        f'<stop offset="1" stop-color="#0b0712"/></linearGradient>'
+        f'<stop offset="0" stop-color="#12101e"/><stop offset="0.6" stop-color="{BG}"/>'
+        f'<stop offset="1" stop-color="#1c1830"/></linearGradient>'
         '<linearGradient id="cell" x1="0" y1="0" x2="0" y2="1">'
-        f'<stop offset="0" stop-color="#10211d"/><stop offset="1" stop-color="#081310"/>'
+        f'<stop offset="0" stop-color="#0d2240"/><stop offset="1" stop-color="#0a0a14"/>'
         "</linearGradient>"
         '<pattern id="grid2" width="26" height="26" patternUnits="userSpaceOnUse">'
         f'<rect width="2" height="2" fill="{ACCENT2}" opacity="0.10"/></pattern>'
@@ -323,7 +324,8 @@ def grid_svg():
         ("FRIENDS", ACCENT2, 5, [(em("haniwa"), "HANIWA"), (em("uribo"), "URIBO"),
                                   (em("penguin"), "PENGUIN"), (em("moai"), "MOAI"),
                                   (em("pyramid"), "PYRAMID"),
-                                  (em("subesube-manjugani"), "CRAB")]),
+                                  (em("subesube-manjugani"), "CRAB"),
+                                  (em("cactus"), "CACTUS")]),
     ]
 
     y = 148

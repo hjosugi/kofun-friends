@@ -18,24 +18,27 @@ import gen_sprites as S  # noqa: E402
 OUT = os.path.join(ROOT, "assets", "backgrounds", "svg")
 W = 320
 H = 180
+COLS = 4
 
-# Original neon palette for high-contrast pixel backgrounds.
+# Cyberpunk palette study:
+# - LoSpec/Paleto CC0-style neon sets: black-violet base, cyan, magenta, lime, yellow.
+# - Local CC0 Warped City samples: #050b16, #030536, #2a044c, #156b9f, #970e8c.
 C = {
-    "void": "#0b001b",
-    "night": "#08173d",
-    "blue": "#03274c",
-    "cyan": "#53ebe4",
-    "cyan_d": "#0f9595",
+    "void": "#0a0a14",
+    "night": "#12101e",
+    "blue": "#0d2240",
+    "cyan": "#00ffff",
+    "cyan_d": "#1870a8",
     "violet": "#7c4dff",
-    "purple": "#4d004f",
-    "magenta": "#e13a6a",
-    "magenta_d": "#c1115a",
-    "pink": "#eca6c0",
-    "acid": "#c8ff2b",
-    "yellow": "#ffea00",
-    "orange": "#ff7a00",
-    "ice": "#eaffff",
-    "ink": "#050915",
+    "purple": "#1c1830",
+    "magenta": "#ff0090",
+    "magenta_d": "#a0006a",
+    "pink": "#ff44cc",
+    "acid": "#ccff00",
+    "yellow": "#ffe040",
+    "orange": "#ff6600",
+    "ice": "#e8e8ff",
+    "ink": "#0a0a14",
 }
 
 SCENES = [
@@ -51,6 +54,7 @@ SCENES = [
     ("pyramid-terminal", "Pyramid Terminal"),
     ("moai-plaza", "Moai Plaza"),
     ("crab-dock", "Crab Dock"),
+    ("cactus-greenhouse", "Cactus Greenhouse"),
 ]
 
 
@@ -126,6 +130,30 @@ def sign(x, y, w, h, fill, edge, slats=3):
     out = [rect(x, y, w, h, fill, 0.9), rect(x, y, w, 2, edge), rect(x, y + h - 2, w, 2, edge)]
     for i in range(slats):
         out.append(rect(x + 4 + i * 8, y + 5, 4, h - 10, edge, 0.78))
+    return out
+
+
+def neon_cactus(x, ground, h=54, body=None, edge=None):
+    body = body or C["acid"]
+    edge = edge or C["cyan_d"]
+    w = 12 if h >= 54 else 10
+    top = ground - h
+    left_y = top + h // 3
+    right_y = top + h // 2
+    out = [
+        rect(x, top, w, h, edge),
+        rect(x + 2, top + 2, w - 4, h - 2, body),
+        rect(x + 4, top + 6, 2, h - 12, C["ice"], 0.18),
+        rect(x - 12, left_y, 12, 8, edge),
+        rect(x - 14, left_y - 16, 8, 24, edge),
+        rect(x - 10, left_y + 2, 10, 4, body),
+        rect(x - 12, left_y - 14, 4, 20, body),
+        rect(x + w, right_y, 12, 8, edge),
+        rect(x + w + 6, right_y - 18, 8, 26, edge),
+        rect(x + w, right_y + 2, 10, 4, body),
+        rect(x + w + 8, right_y - 16, 4, 22, body),
+        rect(x + 3, top - 4, 6, 4, C["magenta"]),
+    ]
     return out
 
 
@@ -265,6 +293,43 @@ def scene_crab_dock():
     return out
 
 
+def scene_cactus_greenhouse():
+    out = base(13, 132)
+    out += skyline(108, [34, 54, 40, 72, 48, 62, 36, 80, 44], C["purple"], C["cyan"])
+    out += [
+        rect(28, 50, 264, 82, C["blue"], 0.42),
+        line(28, 50, 292, 50, C["cyan"], 2, 0.78),
+        line(28, 132, 292, 132, C["cyan"], 2, 0.64),
+        line(28, 50, 28, 132, C["cyan"], 2, 0.64),
+        line(292, 50, 292, 132, C["cyan"], 2, 0.64),
+        line(160, 34, 28, 50, C["cyan"], 2, 0.68),
+        line(160, 34, 292, 50, C["cyan"], 2, 0.68),
+        line(160, 34, 160, 132, C["cyan"], 1, 0.42),
+    ]
+    for x in range(56, 284, 38):
+        out.append(line(x, 52, x - 18, 132, C["cyan_d"], 1, 0.42))
+        out.append(line(x, 52, x + 18, 132, C["magenta_d"], 1, 0.34))
+    out += [
+        rect(52, 62, 70, 4, C["magenta"], 0.9),
+        rect(198, 62, 70, 4, C["magenta"], 0.9),
+        rect(64, 70, 46, 2, C["pink"], 0.7),
+        rect(210, 70, 46, 2, C["pink"], 0.7),
+        rect(0, 132, W, 12, C["ink"]),
+        rect(0, 144, W, 36, C["blue"], 0.62),
+        rect(42, 122, 62, 12, C["purple"]),
+        rect(130, 118, 72, 16, C["purple"]),
+        rect(224, 124, 54, 10, C["purple"]),
+        rect(44, 122, 58, 2, C["magenta"]),
+        rect(132, 118, 68, 2, C["acid"]),
+        rect(226, 124, 50, 2, C["cyan"]),
+    ]
+    out += neon_cactus(66, 122, 46)
+    out += neon_cactus(158, 118, 62, C["acid"], C["cyan_d"])
+    out += neon_cactus(242, 124, 40, C["acid"], C["cyan_d"])
+    out += floor_grid(138, C["acid"])
+    return out
+
+
 BUILDERS = {
     "neon-alley": scene_neon_alley,
     "rain-skyline": scene_rain_skyline,
@@ -278,6 +343,7 @@ BUILDERS = {
     "pyramid-terminal": scene_pyramid_terminal,
     "moai-plaza": scene_moai_plaza,
     "crab-dock": scene_crab_dock,
+    "cactus-greenhouse": scene_cactus_greenhouse,
 }
 
 
@@ -296,10 +362,11 @@ def svg_doc(name, label, content, w=W, h=H):
 
 
 def board_svg():
-    cells = []
+    rows = (len(SCENES) + COLS - 1) // COLS
+    cells = [rect(0, 0, W * COLS, H * rows, C["void"])]
     for idx, (name, label) in enumerate(SCENES):
-        x = (idx % 4) * W
-        y = (idx // 4) * H
+        x = (idx % COLS) * W
+        y = (idx // COLS) * H
         cells.append(f'<g transform="translate({x} {y})">\n    {content_for(name)}\n  </g>')
         cells.append(rect(x + 6, y + 6, 96, 12, C["ink"], 0.62))
         cells.append(
@@ -310,8 +377,8 @@ def board_svg():
         "background-board",
         "Kofun Friends cyberpunk background board",
         "\n  ".join(cells),
-        W * 4,
-        H * 3,
+        W * COLS,
+        H * rows,
     )
 
 
@@ -337,13 +404,14 @@ def mascot_rects(px, ox, oy, scale):
 
 
 def board_mascots_svg():
-    cells = []
+    rows = (len(SCENES) + COLS - 1) // COLS
+    cells = [rect(0, 0, W * COLS, H * rows, C["void"])]
     kofun = S.kofun_variant("smile")
     dochi = S.dochi_variant("idle")
     scale = 6
     for idx, (name, label) in enumerate(SCENES):
-        x = (idx % 4) * W
-        y = (idx // 4) * H
+        x = (idx % COLS) * W
+        y = (idx // COLS) * H
         cells.append(f'<g transform="translate({x} {y})">\n    {content_for(name)}\n  </g>')
         cells.append(rect(x + 6, y + 6, 126, 12, C["ink"], 0.62))
         cells.append(
@@ -356,8 +424,8 @@ def board_mascots_svg():
         "background-board-mascots",
         "Kofun Friends cyberpunk background board with mascots",
         "\n  ".join(cells),
-        W * 4,
-        H * 3,
+        W * COLS,
+        H * rows,
     )
 
 

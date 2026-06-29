@@ -20,30 +20,31 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 N = 16  # grid size
 
 # ---- shared neon palette ---------------------------------------------------
-BG = "#07110f"        # site background (used for "hollow" pixels on emoji)
-ACCENT = "#71f6bd"    # mint
-ACCENT2 = "#7dd3fc"   # cyan
-CORAL = "#ff5470"
-DANGER = "#ff8a8a"
-GOLD = "#f6c177"
-ORANGE = "#ff9d42"
-ORANGE_D = "#ef6f1f"
-VIOLET = "#c792ea"
-VIOLET_D = "#9d6bd0"
-JADE = "#5eead4"
-JADE_D = "#14b8a6"
-JADE_L = "#bdf5e9"
-STEEL = "#cfe9ff"
-STEEL_D = "#7fa8c9"
-CREAM = "#f5e9d0"
-CREAM_D = "#e8d4a8"
-INK = "#0a1c17"       # dark outline / cursor outline
-WHITE = "#eafff6"
-BROWN = "#c17336"
-BROWN_D = "#6d4328"
-TAN = "#ffe1a3"
-STONE = "#9aa7a0"
-STONE_D = "#53625d"
+BG = "#0a0a14"        # near-black violet from cyberpunk/neon palettes
+ACCENT = "#00ffff"    # electric cyan
+ACCENT2 = "#00ccff"   # saturated blue-cyan
+CORAL = "#ff0090"     # hot magenta
+DANGER = "#ff44cc"    # pink glow
+GOLD = "#ffe040"
+ORANGE = "#ff6600"
+ORANGE_D = "#7a2f20"
+ACID = "#ccff00"
+VIOLET = "#7c4dff"
+VIOLET_D = "#2a2445"
+JADE = "#00ffff"
+JADE_D = "#1870a8"
+JADE_L = "#e8e8ff"
+STEEL = "#e8e8ff"
+STEEL_D = "#105080"
+CREAM = "#e8e8ff"
+CREAM_D = "#9aa8c8"
+INK = "#0a0a14"       # dark outline / cursor outline
+WHITE = "#e8e8ff"
+BROWN = "#9a5a3d"
+BROWN_D = "#1c1830"
+TAN = "#ffe040"
+STONE = "#9aa8c8"
+STONE_D = "#2a2445"
 
 
 def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
@@ -98,7 +99,7 @@ HANIWA = [
     ".dgggd....dgggd.",
     "................",
 ]
-HANIWA_PAL = {"g": ORANGE, "d": ORANGE_D, "e": BG}
+HANIWA_PAL = {"g": ORANGE, "d": VIOLET_D, "e": BG}
 
 # うり坊 uribo — side-view striped boar piglet
 URIBO = [
@@ -119,7 +120,7 @@ URIBO = [
     "................",
     "................",
 ]
-URIBO_PAL = {"b": BROWN, "d": BROWN_D, "t": TAN, "n": "#f59b76", "e": BG}
+URIBO_PAL = {"b": BROWN, "d": BROWN_D, "t": TAN, "n": CORAL, "e": BG}
 
 # ペンギン penguin — dark body, white belly, orange beak and feet
 PENGUIN = [
@@ -140,25 +141,25 @@ PENGUIN = [
     "...ooo....ooo...",
     "................",
 ]
-PENGUIN_PAL = {"k": "#163b45", "w": WHITE, "o": ORANGE}
+PENGUIN_PAL = {"k": "#0d2240", "w": WHITE, "o": ORANGE}
 
 # モアイ moai — stone head with heavy brow, long nose and lips
 MOAI = [
     "................",
-    "....dddddd......",
-    "...dssssssd.....",
-    "..dssssssssd....",
-    "..dssddddssd....",
-    "..dssdeedssd....",
-    "..dssssssssd....",
-    "..dsssssssssdd..",
-    "..dssssddddsssd.",
+    "....dddddddd....",
+    "...dssssssssd...",
     "..dssssssssssd..",
-    "..dssddddddsd...",
-    "..dsssssssssd...",
-    "..dssssddddsd...",
-    "..dsssssssssd...",
-    "...dddddddd.....",
+    "..dssddddssssd..",
+    "..dssdeedssssd..",
+    "..dssssssssssd..",
+    "..dsssdssdsssd..",
+    "..dsssdssdsssd..",
+    "..dssssddddssd..",
+    "..dssssssssssd..",
+    "..dssddddddssd..",
+    "..dssssssssssd..",
+    "...dssssssssd...",
+    "....dddddddd....",
     "................",
 ]
 MOAI_PAL = {"s": STONE, "d": STONE_D, "e": BG}
@@ -182,7 +183,7 @@ PYRAMID = [
     "................",
     "................",
 ]
-PYRAMID_PAL = {"g": GOLD, "d": "#a66f24"}
+PYRAMID_PAL = {"g": GOLD, "d": ORANGE}
 
 # すべすべまんじゅうがに subesube-manjugani — round shell, claws and legs
 SUBESUBE_MANJUGANI = [
@@ -204,6 +205,27 @@ SUBESUBE_MANJUGANI = [
     "................",
 ]
 SUBESUBE_MANJUGANI_PAL = {"c": CREAM, "d": CREAM_D, "o": ORANGE, "e": BG, "a": ACCENT}
+
+# さぼてん cactus — saguaro silhouette, neon flower, chunky arms
+CACTUS = [
+    "................",
+    ".......ff.......",
+    "......dggd......",
+    "......dggd......",
+    "...dd.dggd.dd...",
+    "..dggddggddggd..",
+    "..dgggdggdgggd..",
+    "...dggdggdggd...",
+    "....ddggggdd....",
+    "......dggd......",
+    "......dggd......",
+    "......dggd......",
+    ".....dggggd.....",
+    "....dggggggd....",
+    ".....dddddd.....",
+    "................",
+]
+CACTUS_PAL = {"g": ACID, "d": ACCENT2, "f": CORAL}
 
 
 # ===========================================================================
@@ -462,6 +484,7 @@ def main():
         ("emoji", "moai", MOAI, MOAI_PAL, "moai", None),
         ("emoji", "pyramid", PYRAMID, PYRAMID_PAL, "pyramid", None),
         ("emoji", "subesube-manjugani", SUBESUBE_MANJUGANI, SUBESUBE_MANJUGANI_PAL, "subesube-manjugani", None),
+        ("emoji", "cactus", CACTUS, CACTUS_PAL, "cactus", None),
         ("icons", "search", SEARCH, ICON_PAL, "search", None),
         ("icons", "heart", HEART, ICON_PAL, "heart", None),
         ("icons", "star", STAR, ICON_PAL, "star", None),

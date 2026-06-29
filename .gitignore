@@ -19,3 +19,6 @@ Thumbs.db
 # exports so consumers can fetch them directly (raw GitHub / jsDelivr). It is
 # fully reproducible from assets/ + catalog/ via `scripts/regen.sh`.
 .ref
+# python bytecode
+__pycache__/
+*.pyc
