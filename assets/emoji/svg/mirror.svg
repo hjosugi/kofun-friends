@@ -1,20 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 銅鏡 (bronze mirror) emoji — kofun-friends -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="bronze mirror">
-  <rect width="128" height="128" fill="none"/>
-  <defs>
-    <radialGradient id="bronze" cx="42%" cy="38%" r="70%">
-      <stop offset="0%" stop-color="#cdae74"/>
-      <stop offset="100%" stop-color="#8d6e3a"/>
-    </radialGradient>
-  </defs>
-  <circle cx="64" cy="64" r="44" fill="url(#bronze)" stroke="#5d4524" stroke-width="3"/>
-  <circle cx="64" cy="64" r="34" fill="none" stroke="#5d4524" stroke-width="2" opacity="0.6"/>
-  <!-- central knob -->
-  <circle cx="64" cy="64" r="8" fill="#5d4524"/>
-  <!-- radial decoration -->
-  <g stroke="#5d4524" stroke-width="2" opacity="0.7">
-    <path d="M64 30 v8 M64 90 v8 M30 64 h8 M90 64 h8"/>
-    <path d="M42 42 l5 5 M86 42 l-5 5 M42 86 l5 -5 M86 86 l-5 -5"/>
-  </g>
+<!-- mirror — kofun-friends pixel art -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="128" height="128" shape-rendering="crispEdges" role="img" aria-label="mirror">
+  <rect x="5" y="0" width="4" height="1" fill="#b07d2c"/>
+  <rect x="3" y="1" width="2" height="1" fill="#b07d2c"/>
+  <rect x="5" y="1" width="4" height="1" fill="#f6c177"/>
+  <rect x="9" y="1" width="2" height="1" fill="#b07d2c"/>
+  <rect x="2" y="2" width="1" height="1" fill="#b07d2c"/>
+  <rect x="3" y="2" width="8" height="1" fill="#f6c177"/>
+  <rect x="11" y="2" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="3" width="1" height="1" fill="#b07d2c"/>
+  <rect x="2" y="3" width="3" height="1" fill="#f6c177"/>
+  <rect x="5" y="3" width="4" height="1" fill="#b07d2c"/>
+  <rect x="9" y="3" width="3" height="1" fill="#f6c177"/>
+  <rect x="12" y="3" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="4" width="1" height="1" fill="#b07d2c"/>
+  <rect x="2" y="4" width="2" height="1" fill="#f6c177"/>
+  <rect x="4" y="4" width="1" height="1" fill="#b07d2c"/>
+  <rect x="5" y="4" width="4" height="1" fill="#f6c177"/>
+  <rect x="9" y="4" width="1" height="1" fill="#b07d2c"/>
+  <rect x="10" y="4" width="2" height="1" fill="#f6c177"/>
+  <rect x="12" y="4" width="1" height="1" fill="#b07d2c"/>
+  <rect x="0" y="5" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="5" width="2" height="1" fill="#f6c177"/>
+  <rect x="3" y="5" width="1" height="1" fill="#b07d2c"/>
+  <rect x="4" y="5" width="2" height="1" fill="#f6c177"/>
+  <rect x="6" y="5" width="2" height="1" fill="#7dd3fc"/>
+  <rect x="8" y="5" width="2" height="1" fill="#f6c177"/>
+  <rect x="10" y="5" width="1" height="1" fill="#b07d2c"/>
+  <rect x="11" y="5" width="2" height="1" fill="#f6c177"/>
+  <rect x="13" y="5" width="1" height="1" fill="#b07d2c"/>
+  <rect x="0" y="6" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="6" width="2" height="1" fill="#f6c177"/>
+  <rect x="3" y="6" width="1" height="1" fill="#b07d2c"/>
+  <rect x="4" y="6" width="1" height="1" fill="#f6c177"/>
+  <rect x="5" y="6" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="6" y="6" width="2" height="1" fill="#eafff6"/>
+  <rect x="8" y="6" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="9" y="6" width="1" height="1" fill="#f6c177"/>
+  <rect x="10" y="6" width="1" height="1" fill="#b07d2c"/>
+  <rect x="11" y="6" width="2" height="1" fill="#f6c177"/>
+  <rect x="13" y="6" width="1" height="1" fill="#b07d2c"/>
+  <rect x="0" y="7" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="7" width="2" height="1" fill="#f6c177"/>
+  <rect x="3" y="7" width="1" height="1" fill="#b07d2c"/>
+  <rect x="4" y="7" width="1" height="1" fill="#f6c177"/>
+  <rect x="5" y="7" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="6" y="7" width="2" height="1" fill="#eafff6"/>
+  <rect x="8" y="7" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="9" y="7" width="1" height="1" fill="#f6c177"/>
+  <rect x="10" y="7" width="1" height="1" fill="#b07d2c"/>
+  <rect x="11" y="7" width="2" height="1" fill="#f6c177"/>
+  <rect x="13" y="7" width="1" height="1" fill="#b07d2c"/>
+  <rect x="0" y="8" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="8" width="2" height="1" fill="#f6c177"/>
+  <rect x="3" y="8" width="1" height="1" fill="#b07d2c"/>
+  <rect x="4" y="8" width="2" height="1" fill="#f6c177"/>
+  <rect x="6" y="8" width="2" height="1" fill="#7dd3fc"/>
+  <rect x="8" y="8" width="2" height="1" fill="#f6c177"/>
+  <rect x="10" y="8" width="1" height="1" fill="#b07d2c"/>
+  <rect x="11" y="8" width="2" height="1" fill="#f6c177"/>
+  <rect x="13" y="8" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="9" width="1" height="1" fill="#b07d2c"/>
+  <rect x="2" y="9" width="2" height="1" fill="#f6c177"/>
+  <rect x="4" y="9" width="1" height="1" fill="#b07d2c"/>
+  <rect x="5" y="9" width="4" height="1" fill="#f6c177"/>
+  <rect x="9" y="9" width="1" height="1" fill="#b07d2c"/>
+  <rect x="10" y="9" width="2" height="1" fill="#f6c177"/>
+  <rect x="12" y="9" width="1" height="1" fill="#b07d2c"/>
+  <rect x="1" y="10" width="1" height="1" fill="#b07d2c"/>
+  <rect x="2" y="10" width="3" height="1" fill="#f6c177"/>
+  <rect x="5" y="10" width="4" height="1" fill="#b07d2c"/>
+  <rect x="9" y="10" width="3" height="1" fill="#f6c177"/>
+  <rect x="12" y="10" width="1" height="1" fill="#b07d2c"/>
+  <rect x="2" y="11" width="1" height="1" fill="#b07d2c"/>
+  <rect x="3" y="11" width="8" height="1" fill="#f6c177"/>
+  <rect x="11" y="11" width="1" height="1" fill="#b07d2c"/>
+  <rect x="3" y="12" width="2" height="1" fill="#b07d2c"/>
+  <rect x="5" y="12" width="4" height="1" fill="#f6c177"/>
+  <rect x="9" y="12" width="2" height="1" fill="#b07d2c"/>
+  <rect x="5" y="13" width="4" height="1" fill="#b07d2c"/>
 </svg>

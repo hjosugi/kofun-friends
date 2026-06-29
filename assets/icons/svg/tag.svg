@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- tag icon — kofun-friends -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-label="tag">
-  <g fill="none" stroke="#33691e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 12 V4 a1 1 0 0 1 1 -1 h8 l9 9 a1.5 1.5 0 0 1 0 2 l-7 7 a1.5 1.5 0 0 1 -2 0 Z"/>
-    <circle cx="7.5" cy="7.5" r="1.6" fill="#33691e" stroke="none"/>
-  </g>
+<!-- tag — kofun-friends pixel art -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="128" height="128" shape-rendering="crispEdges" role="img" aria-label="tag">
+  <rect x="4" y="1" width="8" height="1" fill="#71f6bd"/>
+  <rect x="3" y="2" width="2" height="1" fill="#71f6bd"/>
+  <rect x="11" y="2" width="2" height="1" fill="#71f6bd"/>
+  <rect x="2" y="3" width="2" height="1" fill="#71f6bd"/>
+  <rect x="6" y="3" width="2" height="1" fill="#07110f"/>
+  <rect x="12" y="3" width="2" height="1" fill="#71f6bd"/>
+  <rect x="2" y="4" width="1" height="1" fill="#71f6bd"/>
+  <rect x="5" y="4" width="4" height="1" fill="#07110f"/>
+  <rect x="13" y="4" width="1" height="1" fill="#71f6bd"/>
+  <rect x="2" y="5" width="1" height="1" fill="#71f6bd"/>
+  <rect x="5" y="5" width="4" height="1" fill="#07110f"/>
+  <rect x="13" y="5" width="1" height="1" fill="#71f6bd"/>
+  <rect x="2" y="6" width="1" height="1" fill="#71f6bd"/>
+  <rect x="6" y="6" width="2" height="1" fill="#07110f"/>
+  <rect x="13" y="6" width="1" height="1" fill="#71f6bd"/>
+  <rect x="2" y="7" width="2" height="1" fill="#71f6bd"/>
+  <rect x="12" y="7" width="2" height="1" fill="#71f6bd"/>
+  <rect x="3" y="8" width="2" height="1" fill="#71f6bd"/>
+  <rect x="11" y="8" width="2" height="1" fill="#71f6bd"/>
+  <rect x="4" y="9" width="2" height="1" fill="#71f6bd"/>
+  <rect x="10" y="9" width="2" height="1" fill="#71f6bd"/>
+  <rect x="5" y="10" width="2" height="1" fill="#71f6bd"/>
+  <rect x="9" y="10" width="2" height="1" fill="#71f6bd"/>
+  <rect x="6" y="11" width="4" height="1" fill="#71f6bd"/>
+  <rect x="7" y="12" width="2" height="1" fill="#71f6bd"/>
 </svg>

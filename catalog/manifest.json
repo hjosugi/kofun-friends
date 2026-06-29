@@ -232,7 +232,7 @@
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
-        { "op": "cur", "sizes": [32, 48], "hotspot_x": 4, "hotspot_y": 2, "outdir": "dist/cursors" }
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 1, "hotspot_y": 1, "outdir": "dist/cursors" }
       ]
     },
     {
@@ -242,7 +242,7 @@
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
-        { "op": "cur", "sizes": [32, 48], "hotspot_x": 12, "hotspot_y": 2, "outdir": "dist/cursors" }
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 11, "hotspot_y": 1, "outdir": "dist/cursors" }
       ]
     },
     {
@@ -252,7 +252,7 @@
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
-        { "op": "cur", "sizes": [32, 48], "hotspot_x": 16, "hotspot_y": 16, "outdir": "dist/cursors" }
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 13, "hotspot_y": 15, "outdir": "dist/cursors" }
       ]
     },
     {
@@ -262,7 +262,7 @@
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [24, 32, 48, 64], "format": "png", "outdir": "dist/cursors" },
-        { "op": "cur", "sizes": [32, 48], "hotspot_x": 16, "hotspot_y": 14, "outdir": "dist/cursors" }
+        { "op": "cur", "sizes": [32, 48], "hotspot_x": 11, "hotspot_y": 12, "outdir": "dist/cursors" }
       ]
     }
   ]

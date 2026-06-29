@@ -36,7 +36,7 @@
 kofun-friends/
 ├── assets/                 # ★ オリジナル素材（source of truth）のみを置く
 │   ├── kofun/              #   古墳くん
-│   │   ├── pixel/          #     ドット絵スプライト原本 (PNG, 24x24)
+│   │   ├── pixel/          #     ドット絵スプライト原本 (PNG, 16x16・本家準拠)
 │   │   ├── svg/            #     ベクター原本
 │   │   ├── png/            #     SVG由来でないラスタ原本
 │   │   ├── gif/            #     アニメGIF原本
@@ -57,8 +57,9 @@ kofun-friends/
 │   ├── src/  Cargo.toml  README.md
 │
 ├── scripts/                # 補助スクリプト
-│   ├── regen.sh            #   dist/ をまるごと再生成
-│   └── gen_sprites.py      #   ドット絵スプライト生成（ASCIIグリッド→PNG）
+│   ├── regen.sh            #   dist/ をまるごと再生成（原本生成→converter）
+│   ├── gen_sprites.py      #   マスコットのドット絵生成（16x16グリッド→PNG/GIF）
+│   └── gen_pixel_svgs.py   #   emoji/icons/cursors のドット絵SVG生成
 ├── docs/                   # ドキュメント
 └── .github/workflows/      # CI（converterのビルド + dist再現性チェック）
 ```
@@ -66,9 +67,11 @@ kofun-friends/
 設計方針（アセット管理のベストプラクティス）:
 
 1. **ソースと成果物を分離** — 人間が編集する原本は `assets/`、機械生成物は `dist/`。
-2. **ベクターは SVG、ドット絵は PNG を原本に** — スケーラブルな絵は SVG、ドット絵は
-   native解像度PNG（`--filter nearest` でクリスプに拡大）。古墳くん/ドチキンさんの
-   スプライトは [scripts/gen_sprites.py](scripts/gen_sprites.py)（ASCIIグリッド+パレット）で生成。
+2. **全素材がドット絵 (ゲーミング/サイバーパンク調)** — マスコットは native解像度PNG
+   （`--filter nearest` でクリスプに拡大）、emoji/icons/cursors は `shape-rendering="crispEdges"`
+   の矩形ベースSVG。どちらも 16x16 グリッドで、古墳くん/ドチキンさんは本家 hjosugi-hub の
+   定義を1:1移植。生成は [scripts/gen_sprites.py](scripts/gen_sprites.py)（マスコット）と
+   [scripts/gen_pixel_svgs.py](scripts/gen_pixel_svgs.py)（emoji/icons/cursors）。
 3. **カタログ駆動** — 何をどう書き出すかを `catalog/manifest.json` に集約し再現可能に。
 4. **ライセンス明記** — 各素材に `license` を付与（未指定は CI が警告）。
 5. **dist は再生成可能** — `scripts/regen.sh` でいつでも `assets/` から作り直せる。

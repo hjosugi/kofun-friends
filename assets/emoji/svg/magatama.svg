@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 勾玉 (magatama) emoji — kofun-friends -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="magatama">
-  <rect width="128" height="128" fill="none"/>
-  <defs>
-    <linearGradient id="jade" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#4db6ac"/>
-      <stop offset="100%" stop-color="#00695c"/>
-    </linearGradient>
-  </defs>
-  <!-- comma body: thick curved stroke, tail tapers via round cap -->
-  <path d="M64 34 A30 30 0 1 0 92 82" fill="none" stroke="#004d40" stroke-width="30" stroke-linecap="round"/>
-  <path d="M64 34 A30 30 0 1 0 92 82" fill="none" stroke="url(#jade)" stroke-width="22" stroke-linecap="round"/>
-  <!-- fat head -->
-  <circle cx="64" cy="40" r="20" fill="#004d40"/>
-  <circle cx="64" cy="40" r="16" fill="url(#jade)"/>
-  <!-- drill hole -->
-  <circle cx="64" cy="40" r="6.5" fill="#e0f2f1" stroke="#004d40" stroke-width="2"/>
-  <!-- highlight -->
-  <path d="M40 52 a26 26 0 0 1 18 -16" fill="none" stroke="#b2dfdb" stroke-width="3" stroke-linecap="round" opacity="0.8"/>
+<!-- magatama — kofun-friends pixel art -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="128" height="128" shape-rendering="crispEdges" role="img" aria-label="magatama">
+  <rect x="5" y="1" width="4" height="1" fill="#bdf5e9"/>
+  <rect x="3" y="2" width="2" height="1" fill="#bdf5e9"/>
+  <rect x="5" y="2" width="4" height="1" fill="#5eead4"/>
+  <rect x="9" y="2" width="2" height="1" fill="#bdf5e9"/>
+  <rect x="2" y="3" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="3" y="3" width="2" height="1" fill="#5eead4"/>
+  <rect x="5" y="3" width="4" height="1" fill="#eafff6"/>
+  <rect x="9" y="3" width="2" height="1" fill="#5eead4"/>
+  <rect x="11" y="3" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="2" y="4" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="3" y="4" width="2" height="1" fill="#5eead4"/>
+  <rect x="5" y="4" width="4" height="1" fill="#eafff6"/>
+  <rect x="9" y="4" width="2" height="1" fill="#5eead4"/>
+  <rect x="11" y="4" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="2" y="5" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="3" y="5" width="8" height="1" fill="#5eead4"/>
+  <rect x="11" y="5" width="1" height="1" fill="#bdf5e9"/>
+  <rect x="2" y="6" width="1" height="1" fill="#14b8a6"/>
+  <rect x="3" y="6" width="8" height="1" fill="#5eead4"/>
+  <rect x="11" y="6" width="1" height="1" fill="#14b8a6"/>
+  <rect x="3" y="7" width="1" height="1" fill="#14b8a6"/>
+  <rect x="4" y="7" width="6" height="1" fill="#5eead4"/>
+  <rect x="10" y="7" width="1" height="1" fill="#14b8a6"/>
+  <rect x="4" y="8" width="2" height="1" fill="#14b8a6"/>
+  <rect x="6" y="8" width="5" height="1" fill="#5eead4"/>
+  <rect x="11" y="8" width="1" height="1" fill="#14b8a6"/>
+  <rect x="6" y="9" width="1" height="1" fill="#14b8a6"/>
+  <rect x="7" y="9" width="5" height="1" fill="#5eead4"/>
+  <rect x="12" y="9" width="1" height="1" fill="#14b8a6"/>
+  <rect x="7" y="10" width="1" height="1" fill="#14b8a6"/>
+  <rect x="8" y="10" width="4" height="1" fill="#5eead4"/>
+  <rect x="12" y="10" width="1" height="1" fill="#14b8a6"/>
+  <rect x="8" y="11" width="1" height="1" fill="#14b8a6"/>
+  <rect x="9" y="11" width="3" height="1" fill="#5eead4"/>
+  <rect x="12" y="11" width="1" height="1" fill="#14b8a6"/>
+  <rect x="9" y="12" width="1" height="1" fill="#14b8a6"/>
+  <rect x="10" y="12" width="2" height="1" fill="#5eead4"/>
+  <rect x="12" y="12" width="1" height="1" fill="#14b8a6"/>
+  <rect x="10" y="13" width="1" height="1" fill="#14b8a6"/>
+  <rect x="11" y="13" width="1" height="1" fill="#5eead4"/>
+  <rect x="12" y="13" width="1" height="1" fill="#14b8a6"/>
+  <rect x="11" y="14" width="1" height="1" fill="#14b8a6"/>
 </svg>

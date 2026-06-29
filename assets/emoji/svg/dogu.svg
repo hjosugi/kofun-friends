@@ -1,20 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 土偶 (dogu / clay figurine, goggle-eyed style) emoji — kofun-friends -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="dogu clay figurine">
-  <rect width="128" height="128" fill="none"/>
-  <!-- body -->
-  <path d="M44 116 Q40 78 48 64 Q40 54 46 44 Q52 36 64 36 Q76 36 82 44 Q88 54 80 64 Q88 78 84 116 Z"
-        fill="#c98a5e" stroke="#6d4327" stroke-width="3" stroke-linejoin="round"/>
-  <!-- arms -->
-  <path d="M44 70 q-14 2 -16 18" fill="none" stroke="#6d4327" stroke-width="7" stroke-linecap="round"/>
-  <path d="M84 70 q14 2 16 18" fill="none" stroke="#6d4327" stroke-width="7" stroke-linecap="round"/>
-  <!-- goggle eyes -->
-  <ellipse cx="54" cy="52" rx="9" ry="6" fill="#3e2723"/>
-  <ellipse cx="74" cy="52" rx="9" ry="6" fill="#3e2723"/>
-  <ellipse cx="54" cy="52" rx="4" ry="2.5" fill="#d7ccc8"/>
-  <ellipse cx="74" cy="52" rx="4" ry="2.5" fill="#d7ccc8"/>
-  <!-- pattern lines -->
-  <g fill="none" stroke="#6d4327" stroke-width="2" opacity="0.7">
-    <path d="M56 78 h16 M52 90 h24 M54 102 h20"/>
-  </g>
+<!-- dogu — kofun-friends pixel art -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="128" height="128" shape-rendering="crispEdges" role="img" aria-label="dogu">
+  <rect x="5" y="0" width="4" height="1" fill="#c792ea"/>
+  <rect x="4" y="1" width="6" height="1" fill="#c792ea"/>
+  <rect x="3" y="2" width="2" height="1" fill="#c792ea"/>
+  <rect x="5" y="2" width="4" height="1" fill="#7dd3fc"/>
+  <rect x="9" y="2" width="2" height="1" fill="#c792ea"/>
+  <rect x="3" y="3" width="1" height="1" fill="#c792ea"/>
+  <rect x="4" y="3" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="5" y="3" width="1" height="1" fill="#eafff6"/>
+  <rect x="6" y="3" width="2" height="1" fill="#7dd3fc"/>
+  <rect x="8" y="3" width="1" height="1" fill="#eafff6"/>
+  <rect x="9" y="3" width="1" height="1" fill="#7dd3fc"/>
+  <rect x="10" y="3" width="1" height="1" fill="#c792ea"/>
+  <rect x="3" y="4" width="2" height="1" fill="#c792ea"/>
+  <rect x="5" y="4" width="4" height="1" fill="#7dd3fc"/>
+  <rect x="9" y="4" width="2" height="1" fill="#c792ea"/>
+  <rect x="4" y="5" width="6" height="1" fill="#c792ea"/>
+  <rect x="3" y="6" width="8" height="1" fill="#c792ea"/>
+  <rect x="2" y="7" width="10" height="1" fill="#c792ea"/>
+  <rect x="2" y="8" width="1" height="1" fill="#c792ea"/>
+  <rect x="3" y="8" width="1" height="1" fill="#9d6bd0"/>
+  <rect x="4" y="8" width="6" height="1" fill="#c792ea"/>
+  <rect x="10" y="8" width="1" height="1" fill="#9d6bd0"/>
+  <rect x="11" y="8" width="1" height="1" fill="#c792ea"/>
+  <rect x="2" y="9" width="10" height="1" fill="#c792ea"/>
+  <rect x="3" y="10" width="8" height="1" fill="#c792ea"/>
+  <rect x="3" y="11" width="3" height="1" fill="#c792ea"/>
+  <rect x="8" y="11" width="3" height="1" fill="#c792ea"/>
+  <rect x="3" y="12" width="2" height="1" fill="#c792ea"/>
+  <rect x="9" y="12" width="2" height="1" fill="#c792ea"/>
+  <rect x="2" y="13" width="3" height="1" fill="#c792ea"/>
+  <rect x="9" y="13" width="3" height="1" fill="#c792ea"/>
+  <rect x="2" y="14" width="2" height="1" fill="#c792ea"/>
+  <rect x="10" y="14" width="2" height="1" fill="#c792ea"/>
 </svg>
