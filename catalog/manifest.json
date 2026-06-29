@@ -117,6 +117,205 @@
     },
 
     {
+      "source": "assets/backgrounds/svg/neon-alley.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "neon", "alley"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/rain-skyline.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "rain", "skyline"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/maglev-platform.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "station", "platform"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/arcade-market.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "market", "arcade"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/rooftop-antennas.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "rooftop", "antennas"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/data-shrine.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "shrine", "data"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/underpass.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "underpass", "street"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/holo-billboards.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "hologram", "billboards"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/canal-reflections.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "canal", "reflections"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/pyramid-terminal.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "pyramid", "terminal"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/moai-plaza.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "moai", "plaza"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/crab-dock.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "dock", "waterfront"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/background-board.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "contact-sheet"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/svg/background-board-mascots.svg",
+      "category": "backgrounds",
+      "tags": ["background", "pixel", "cyberpunk", "contact-sheet", "mascot-preview"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/backgrounds" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/warped-city/background/skyline-a.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "warped-city", "skyline"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/warped-city/background/skyline-b.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "warped-city", "skyline"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/warped-city/background/buildings-bg.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "warped-city", "buildings"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/warped-city/background/near-buildings-bg.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "warped-city", "buildings"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/skyline-background/visualizations/skyline-visualization-01.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "skyline", "visualization"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/skyline-background/visualizations/skyline-visualization-02.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "skyline", "visualization"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/skyline-background/visualizations/skyline-visualization-03.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "skyline", "visualization"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+    {
+      "source": "assets/backgrounds/cc0/skyline-background/visualizations/skyline-visualization-04.png",
+      "category": "backgrounds",
+      "tags": ["background", "cc0", "opengameart", "skyline", "visualization"],
+      "license": "CC0-1.0",
+      "outputs": [
+        { "op": "resize", "width": 1280, "format": "png", "filter": "nearest", "outdir": "dist/backgrounds/cc0" }
+      ]
+    },
+
+    {
       "source": "assets/emoji/svg/haniwa.svg",
       "category": "emoji",
       "tags": ["emoji", "haniwa", "kofun"],

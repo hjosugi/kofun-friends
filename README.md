@@ -51,12 +51,13 @@ kofun-friends/
 │   │   └── raw/            #     .ai/.psd/.kra など編集用ソース
 │   ├── dochicken/          #   ドチキンさん（pixel/svg/png/gif/raw）
 │   ├── emoji/              #   絵文字セット (svg/png/gif)
+│   ├── backgrounds/        #   背景案・CC0参照素材 (svg/png)
 │   ├── cursors/            #   マウスカーソル (svg/png/ani)
 │   ├── icons/              #   汎用アイコン (svg/png)
 │   └── lineup/             #   キャラ集合（group/cast スライド）の原本SVG
 │
 ├── dist/                   # ★ converter が生成した配布用の成果物（再生成可能）
-│   ├── kofun/  dochicken/  emoji/  cursors/  icons/  lineup/
+│   ├── kofun/  dochicken/  emoji/  backgrounds/  cursors/  icons/  lineup/
 │
 ├── catalog/                # 素材カタログ（メタデータ・生成定義）
 │   ├── manifest.json       #   どの素材をどう書き出すかの宣言
@@ -69,7 +70,8 @@ kofun-friends/
 │   ├── regen.sh            #   dist/ をまるごと再生成（原本生成→converter）
 │   ├── gen_sprites.py      #   マスコットのドット絵生成（16x16グリッド→PNG/GIF）
 │   ├── gen_pixel_svgs.py   #   emoji/icons/cursors のドット絵SVG生成
-│   └── gen_lineup.py       #   キャラ集合 group/cast スライド生成（ピクセルフォント）
+│   ├── gen_lineup.py       #   キャラ集合 group/cast スライド生成（ピクセルフォント）
+│   └── gen_backgrounds.py  #   背景案 SVG 生成（サイバーパンク背景ボード）
 ├── docs/                   # ドキュメント
 └── .github/workflows/      # CI（converterのビルド + dist再現性チェック）
 ```
@@ -78,10 +80,11 @@ kofun-friends/
 
 1. **ソースと成果物を分離** — 人間が編集する原本は `assets/`、機械生成物は `dist/`。
 2. **全素材がドット絵 (ゲーミング/サイバーパンク調)** — マスコットは native解像度PNG
-   （`--filter nearest` でクリスプに拡大）、emoji/icons/cursors は `shape-rendering="crispEdges"`
-   の矩形ベースSVG。どちらも 16x16 グリッドで、古墳くん/ドチキンさんは本家 hjosugi-hub の
-   定義を1:1移植。生成は [scripts/gen_sprites.py](scripts/gen_sprites.py)（マスコット）と
-   [scripts/gen_pixel_svgs.py](scripts/gen_pixel_svgs.py)（emoji/icons/cursors）。
+   （`--filter nearest` でクリスプに拡大）、emoji/icons/cursors/backgrounds は
+   `shape-rendering="crispEdges"` の矩形ベースSVG。古墳くん/ドチキンさんは本家 hjosugi-hub の
+   定義を1:1移植。生成は [scripts/gen_sprites.py](scripts/gen_sprites.py)（マスコット）、
+   [scripts/gen_pixel_svgs.py](scripts/gen_pixel_svgs.py)（emoji/icons/cursors）、
+   [scripts/gen_backgrounds.py](scripts/gen_backgrounds.py)（backgrounds）。
 3. **カタログ駆動** — 何をどう書き出すかを `catalog/manifest.json` に集約し再現可能に。
 4. **ライセンス明記** — 各素材に `license` を付与（未指定は CI が警告）。
 5. **dist は再生成可能** — `scripts/regen.sh` でいつでも `assets/` から作り直せる。
