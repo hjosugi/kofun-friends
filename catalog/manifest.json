@@ -126,54 +126,45 @@
       ]
     },
     {
-      "source": "assets/emoji/svg/magatama.svg",
+      "source": "assets/emoji/svg/uribo.svg",
       "category": "emoji",
-      "tags": ["emoji", "magatama", "jade", "kofun"],
+      "tags": ["emoji", "uribo", "boar", "piglet", "striped"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
       ]
     },
     {
-      "source": "assets/emoji/svg/egg.svg",
+      "source": "assets/emoji/svg/penguin.svg",
       "category": "emoji",
-      "tags": ["emoji", "egg", "dochicken"],
+      "tags": ["emoji", "penguin", "bird"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
       ]
     },
     {
-      "source": "assets/emoji/svg/mirror.svg",
+      "source": "assets/emoji/svg/moai.svg",
       "category": "emoji",
-      "tags": ["emoji", "mirror", "dokyo", "kofun"],
+      "tags": ["emoji", "moai", "stone", "statue"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
       ]
     },
     {
-      "source": "assets/emoji/svg/sword.svg",
+      "source": "assets/emoji/svg/pyramid.svg",
       "category": "emoji",
-      "tags": ["emoji", "sword", "tekken", "kofun"],
+      "tags": ["emoji", "pyramid", "stone", "triangle"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
       ]
     },
     {
-      "source": "assets/emoji/svg/dogu.svg",
+      "source": "assets/emoji/svg/subesube-manjugani.svg",
       "category": "emoji",
-      "tags": ["emoji", "dogu", "clay-figurine"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
-      ]
-    },
-    {
-      "source": "assets/emoji/svg/sparkle.svg",
-      "category": "emoji",
-      "tags": ["emoji", "sparkle", "kirakira"],
+      "tags": ["emoji", "subesube-manjugani", "smooth-manjugani-crab", "crab"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }

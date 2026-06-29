@@ -39,6 +39,11 @@ CREAM = "#f5e9d0"
 CREAM_D = "#e8d4a8"
 INK = "#0a1c17"       # dark outline / cursor outline
 WHITE = "#eafff6"
+BROWN = "#c17336"
+BROWN_D = "#6d4328"
+TAN = "#ffe1a3"
+STONE = "#9aa7a0"
+STONE_D = "#53625d"
 
 
 def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
@@ -71,155 +76,134 @@ def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
 
 
 # ===========================================================================
-# EMOJI (16x16) — kofun-era artefacts, neon-recoloured
+# EMOJI (16x16) — small friends with strong, readable silhouettes
 # ===========================================================================
 
-# 埴輪 haniwa — clay figure, orange like Dochicken
+# 埴輪 haniwa — hat brim, eye holes, mouth, arms, and hollow legs
 HANIWA = [
-    "......gggg......",
-    ".....gggggg.....",
-    "....gggggggg....",
-    "..gggggggggggg..",
-    "....gggggggg....",
-    "....geggggeg....",
-    "....gggggggg....",
-    "...gggggggggg...",
-    "..gggggggggggg..",
-    "..gggggeeggggd..",
-    "..gggggggggggg..",
+    "................",
+    ".....dddddd.....",
+    "....dggggggd....",
     "...dggggggggd...",
-    "...gggggggggg...",
-    "...gggggggggg...",
-    "...dgggggggdd...",
-    "....gggggggg....",
+    "...dggegggegd...",
+    "...dgggeeggd....",
+    "....dgggggd.....",
+    ".....dggd.......",
+    "..ddggggggggdd..",
+    ".dggggggggggggd.",
+    "...dggggggggd...",
+    "...dggggggggd...",
+    "..dggggggggggd..",
+    "..dggg....gggd..",
+    ".dgggd....dgggd.",
+    "................",
 ]
 HANIWA_PAL = {"g": ORANGE, "d": ORANGE_D, "e": BG}
 
-# 勾玉 magatama — comma-shaped jade bead with drill hole
-MAGATAMA = [
+# うり坊 uribo — side-view striped boar piglet
+URIBO = [
     "................",
-    ".....llll.......",
-    "...lljjjjll.....",
-    "..ljjwwwwjjl....",
-    "..ljjwwwwjjl....",
-    "..ljjjjjjjjl....",
-    "..djjjjjjjjd....",
-    "...djjjjjjd.....",
-    "....ddjjjjjd....",
-    "......djjjjjd...",
-    ".......djjjjd...",
-    "........djjjd...",
-    ".........djjd...",
-    "..........djd...",
-    "...........d....",
     "................",
-]
-MAGATAMA_PAL = {"j": JADE, "d": JADE_D, "l": JADE_L, "w": WHITE}
-
-# 銅鏡 bronze mirror — round disc, central knob, ring pattern
-MIRROR = [
-    ".....dddd.......",
-    "...ddggggdd.....",
-    "..dggggggggd....",
-    ".dgggddddgggd...",
-    ".dggdggggdggd...",
-    "dggdggwwggdggd..",
-    "dggdgwccwgdggd..",
-    "dggdgwccwgdggd..",
-    "dggdggwwggdggd..",
-    ".dggdggggdggd...",
-    ".dgggddddgggd...",
-    "..dggggggggd....",
-    "...ddggggdd.....",
-    ".....dddd.......",
+    "....dd.dd.......",
+    "...dbbdbbdd.....",
+    "..dbttbttbbbd...",
+    ".dbbtbbtbbbbbdd.",
+    ".dbbbbbbbbbbbeed",
+    ".dbbtbbtbbbbnnnd",
+    "..dbttbttbbbbd..",
+    "...dddddddddd...",
+    "...d.d...d.d....",
+    "...d.d...d.d....",
+    "................",
+    "................",
     "................",
     "................",
 ]
-MIRROR_PAL = {"g": GOLD, "d": "#b07d2c", "w": ACCENT2, "c": WHITE}
+URIBO_PAL = {"b": BROWN, "d": BROWN_D, "t": TAN, "n": "#f59b76", "e": BG}
 
-# 鉄剣 iron sword — vertical blade, gold guard, mint grip
-SWORD = [
-    ".......b........",
-    ".......bb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "......sbb.......",
-    "....gggggggg....",
-    ".......gg.......",
-    "......aggg......",
-    ".......gg.......",
-    ".......gg.......",
-    "......aaaa......",
+# ペンギン penguin — dark body, white belly, orange beak and feet
+PENGUIN = [
+    "................",
+    "......kkkk......",
+    ".....kkkkkk.....",
+    "....kkwkkwkk....",
+    "....kkkoookk....",
+    "...kkkkkkkkkk...",
+    "..kkkkwwwwkkkk..",
+    ".kkkkkwwwwkkkkk.",
+    ".kkkkkwwwwkkkkk.",
+    "..kkkkwwwwkkkk..",
+    "...kkkwwwwkkk...",
+    "....kkkwwkkk....",
+    ".....kkkkkk.....",
+    "....oo....oo....",
+    "...ooo....ooo...",
     "................",
 ]
-SWORD_PAL = {"b": STEEL, "s": STEEL_D, "g": GOLD, "a": ACCENT}
+PENGUIN_PAL = {"k": "#163b45", "w": WHITE, "o": ORANGE}
 
-# 土偶 dogu — clay figurine with goggle (snow-glasses) eyes, violet neon
-DOGU = [
-    ".....vvvv.......",
-    "....vvvvvv......",
-    "...vvccccvv.....",
-    "...vcwccwcv.....",
-    "...vvccccvv.....",
-    "....vvvvvv......",
-    "...vvvvvvvv.....",
-    "..vvvvvvvvvv....",
-    "..vdvvvvvvdv....",
-    "..vvvvvvvvvv....",
-    "...vvvvvvvv.....",
-    "...vvv..vvv.....",
-    "...vv....vv.....",
-    "..vvv....vvv....",
-    "..vv......vv....",
+# モアイ moai — stone head with heavy brow, long nose and lips
+MOAI = [
+    "................",
+    "....dddddd......",
+    "...dssssssd.....",
+    "..dssssssssd....",
+    "..dssddddssd....",
+    "..dssdeedssd....",
+    "..dssssssssd....",
+    "..dsssssssssdd..",
+    "..dssssddddsssd.",
+    "..dssssssssssd..",
+    "..dssddddddsd...",
+    "..dsssssssssd...",
+    "..dssssddddsd...",
+    "..dsssssssssd...",
+    "...dddddddd.....",
     "................",
 ]
-DOGU_PAL = {"v": VIOLET, "d": VIOLET_D, "c": ACCENT2, "w": WHITE}
+MOAI_PAL = {"s": STONE, "d": STONE_D, "e": BG}
 
-# キラキラ sparkle — 4-point neon shine
-SPARKLE = [
+# ピラミッド pyramid — stepped triangle with brick cuts
+PYRAMID = [
     "................",
-    ".......a........",
-    ".......a........",
-    "......aaa.......",
-    "......aca.......",
-    ".a...aaaaa...a..",
-    "..aaaacccaaaa...",
-    "...accwwwcca....",
-    "..aaaacccaaaa...",
-    ".a...aaaaa...a..",
-    "......aca.......",
-    "......aaa.......",
-    ".......a........",
-    ".......a........",
+    ".......d........",
+    "......dgd.......",
+    ".....dgggd......",
+    "....dgggggd.....",
+    "...dggdggggd....",
+    "..dggggdggggd...",
+    ".dggdggggdgggd..",
+    "dggggdggggdgggd.",
+    "dggdggggdgggggd.",
+    "dgggggggggggggd.",
+    "dddddddddddddddd",
+    "................",
+    "................",
     "................",
     "................",
 ]
-SPARKLE_PAL = {"a": ACCENT, "c": ACCENT2, "w": WHITE}
+PYRAMID_PAL = {"g": GOLD, "d": "#a66f24"}
 
-# egg — Dochicken's egg, cream with neon speckles
-EGG = [
+# すべすべまんじゅうがに subesube-manjugani — round shell, claws and legs
+SUBESUBE_MANJUGANI = [
     "................",
-    ".......cc.......",
-    "......cccc......",
+    "................",
     ".....cccccc.....",
-    ".....cccccc.....",
-    "....cccaaccc....",
-    "....cccccccc....",
-    "...cccccccacc...",
-    "...ccaccccccc...",
     "...cccccccccc...",
-    "...ccccccaccc...",
-    "...cccacccccc...",
-    "....cccccccc....",
+    "..cccccccccccc..",
+    ".occcaccccaccco.",
+    "o.cccccccccccc.o",
+    ".occcccccccccco.",
+    "..ccccaccccacc..",
+    "...cccccccccc...",
     "....dccccccd....",
     ".....dddddd.....",
+    ".o.o........o.o.",
+    "oo..........oo..",
+    "................",
     "................",
 ]
-EGG_PAL = {"c": CREAM, "d": CREAM_D, "a": ACCENT}
+SUBESUBE_MANJUGANI_PAL = {"c": CREAM, "d": CREAM_D, "o": ORANGE, "e": BG, "a": ACCENT}
 
 
 # ===========================================================================
@@ -473,12 +457,11 @@ def main():
     jobs = [
         # (subdir, name, grid, palette, label, hotspot-grid-or-None)
         ("emoji", "haniwa", HANIWA, HANIWA_PAL, "haniwa", None),
-        ("emoji", "magatama", MAGATAMA, MAGATAMA_PAL, "magatama", None),
-        ("emoji", "mirror", MIRROR, MIRROR_PAL, "mirror", None),
-        ("emoji", "sword", SWORD, SWORD_PAL, "sword", None),
-        ("emoji", "dogu", DOGU, DOGU_PAL, "dogu", None),
-        ("emoji", "sparkle", SPARKLE, SPARKLE_PAL, "sparkle", None),
-        ("emoji", "egg", EGG, EGG_PAL, "egg", None),
+        ("emoji", "uribo", URIBO, URIBO_PAL, "uribo", None),
+        ("emoji", "penguin", PENGUIN, PENGUIN_PAL, "penguin", None),
+        ("emoji", "moai", MOAI, MOAI_PAL, "moai", None),
+        ("emoji", "pyramid", PYRAMID, PYRAMID_PAL, "pyramid", None),
+        ("emoji", "subesube-manjugani", SUBESUBE_MANJUGANI, SUBESUBE_MANJUGANI_PAL, "subesube-manjugani", None),
         ("icons", "search", SEARCH, ICON_PAL, "search", None),
         ("icons", "heart", HEART, ICON_PAL, "heart", None),
         ("icons", "star", STAR, ICON_PAL, "star", None),

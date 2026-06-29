@@ -87,8 +87,9 @@ def mascot_size(s):
 
 
 def emoji_rects(name, ox, oy, s):
-    grid = getattr(P, name.upper())
-    pal = getattr(P, name.upper() + "_PAL")
+    key = name.upper().replace("-", "_")
+    grid = getattr(P, key)
+    pal = getattr(P, key + "_PAL")
     return _rects_from_ascii(grid, pal, ox, oy, s)
 
 
@@ -117,6 +118,7 @@ FONT = {
     "T": ["XXXXX", "..X..", "..X..", "..X..", "..X..", "..X..", "..X.."],
     "U": ["X...X", "X...X", "X...X", "X...X", "X...X", "X...X", ".XXX."],
     "X": ["X...X", "X...X", ".X.X.", "..X..", ".X.X.", "X...X", "X...X"],
+    "Y": ["X...X", "X...X", ".X.X.", "..X..", "..X..", "..X..", "..X.."],
 }
 
 
@@ -175,8 +177,8 @@ def build_svg(w, h, defs, bg_markup, pixel_rects, label, overlay=""):
 # ===========================================================================
 def group_svg():
     # Square, tight 2x2 cluster like the vscode-pets icon: each mascot appears
-    # twice (different pose), corners slightly overlapping, a sparkle in the
-    # middle where vscode-pets puts Clippy. Transparent — drops onto any bg.
+    # twice (different pose), corners slightly overlapping, with a haniwa badge
+    # in the middle. Transparent — drops onto any bg.
     W = H = 256
     s = 7  # 112px per mascot
     r = []
@@ -184,7 +186,7 @@ def group_svg():
     r += mascot_rects("dochicken", "idle", 132, 10, s)    # top-right
     r += mascot_rects("dochicken", "peck", 10, 132, s)    # bottom-left
     r += mascot_rects("kofun", "munch", 134, 134, s)      # bottom-right
-    r += emoji_rects("sparkle", 96, 92, 4)                # centre accent
+    r += emoji_rects("haniwa", 96, 92, 4)                 # centre badge
     return build_svg(W, H, "", "", r, "Kofun-kun and friends — group")
 
 
@@ -258,7 +260,7 @@ def cast_svg():
         r += text_centered(name, sx + stage_w // 2, stage_y + stage_w + 22, 6, color)
 
     # item strip along the bottom
-    items = ["haniwa", "magatama", "mirror", "sword", "dogu", "sparkle", "egg"]
+    items = ["haniwa", "uribo", "penguin", "moai", "pyramid", "subesube-manjugani"]
     iscale = 5
     isz = P.N * iscale
     igap = 26
@@ -318,10 +320,10 @@ def grid_svg():
                                   (km("smile"), "SMILE"), (km("munch"), "MUNCH")]),
         ("DOCHICKEN-SAN", ORANGE, 6, [(dm("idle"), "IDLE"), (dm("blink"), "BLINK"),
                                       (dm("peck"), "PECK")]),
-        ("TREASURES", ACCENT2, 5, [(em("haniwa"), "HANIWA"), (em("magatama"), "MAGATAMA"),
-                                   (em("mirror"), "MIRROR"), (em("sword"), "SWORD"),
-                                   (em("dogu"), "DOGU"), (em("sparkle"), "SPARKLE"),
-                                   (em("egg"), "EGG")]),
+        ("FRIENDS", ACCENT2, 5, [(em("haniwa"), "HANIWA"), (em("uribo"), "URIBO"),
+                                  (em("penguin"), "PENGUIN"), (em("moai"), "MOAI"),
+                                  (em("pyramid"), "PYRAMID"),
+                                  (em("subesube-manjugani"), "CRAB")]),
     ]
 
     y = 148
