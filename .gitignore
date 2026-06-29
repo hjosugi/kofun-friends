@@ -18,3 +18,4 @@ Thumbs.db
 # NOTE: dist/ IS committed on purpose — it holds the published, ready-to-use
 # exports so consumers can fetch them directly (raw GitHub / jsDelivr). It is
 # fully reproducible from assets/ + catalog/ via `scripts/regen.sh`.
+.ref

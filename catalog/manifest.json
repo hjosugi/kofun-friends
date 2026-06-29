@@ -89,6 +89,34 @@
     },
 
     {
+      "source": "assets/lineup/kofun-friends-group.svg",
+      "category": "lineup",
+      "tags": ["lineup", "group", "cast", "kofun-kun", "dochicken-san", "icon"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "sizes", "sizes": [128, 256, 512], "format": "png", "outdir": "dist/lineup" }
+      ]
+    },
+    {
+      "source": "assets/lineup/kofun-friends-cast.svg",
+      "category": "lineup",
+      "tags": ["lineup", "cast", "slide", "poster", "kofun-kun", "dochicken-san"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/lineup" }
+      ]
+    },
+    {
+      "source": "assets/lineup/kofun-friends-grid.svg",
+      "category": "lineup",
+      "tags": ["lineup", "roster", "grid", "characters", "kofun-kun", "dochicken-san"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "rasterize", "width": 1280, "outdir": "dist/lineup" }
+      ]
+    },
+
+    {
       "source": "assets/emoji/svg/haniwa.svg",
       "category": "emoji",
       "tags": ["emoji", "haniwa", "kofun"],
