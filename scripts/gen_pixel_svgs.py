@@ -57,8 +57,10 @@ BOAR = "#8e5f3c"
 BOAR_D = "#5f382b"
 BOAR_STRIPE = "#e1b36b"
 PINK = "#f28b93"
-NAVY = "#16304f"
-NAVY_D = "#0f1f36"
+NEON_CYAN = "#00d7ff"
+NEON_PINK = "#ff4fa3"
+NAVY = "#2f7de1"
+NAVY_D = "#12345d"
 SNOW = "#f0f2ee"
 STONE_M = "#8d93a6"
 STONE_L = "#b6bccb"
@@ -106,23 +108,23 @@ def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
 # EMOJI (16x16) — small friends with strong, readable silhouettes
 # ===========================================================================
 
-# 埴輪 haniwa — simple clay idol with a strong silhouette and hollow eyes
+# 埴輪 haniwa — broad clay idol with only the readable features kept
 HANIWA = [
     "................",
-    ".....dddddd.....",
-    "....dccccccd....",
+    "......dddd......",
+    "....ddccccdd....",
     "...dccccccccd...",
-    "...dcceccedcd...",
-    "...dcccecccd....",
-    "....dcccccd.....",
+    "...dcceddcecd...",
+    "...dccccccccd...",
+    "....ddccccdd....",
     "..ddccccccccdd..",
     ".dccccccccccccd.",
-    ".dccdccccccdccd.",
-    "..dcccccclcccd..",
     "..dccccccccccd..",
-    "..dcccd..dcccd..",
-    "..dccd....dccd..",
-    "...dd......dd...",
+    "...dcccclcccd...",
+    "...dccccccccd...",
+    "...dccd..dccd...",
+    "...dcd....dcd...",
+    "....d......d....",
     "................",
 ]
 HANIWA_PAL = {"c": CLAY, "l": CLAY_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
@@ -131,16 +133,16 @@ HANIWA_PAL = {"c": CLAY, "l": CLAY_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
 URIBO = [
     "................",
     "................",
-    "....dd.dd.......",
-    "...dttdttdd.....",
-    "..dccctcccdd....",
-    ".dccctcccccdd...",
-    "dccctccccecnnd..",
-    "dccctccccccnnd..",
-    ".dcccctccccdd...",
-    "..dddddddddd....",
-    "...d.d...d.d....",
-    "...d.d...d.d....",
+    "....dd..........",
+    "...dttd.........",
+    "..dccccdddd.....",
+    ".dctcctccccdd...",
+    "dctcctccccccnd..",
+    "dcccccccccend...",
+    ".dccctccccccd...",
+    "..dccccccccd....",
+    "...ddddd.dd.....",
+    "...d..d.d.......",
     "................",
     "................",
     "................",
@@ -148,14 +150,14 @@ URIBO = [
 ]
 URIBO_PAL = {"c": BOAR, "d": PIXEL_INK, "t": BOAR_STRIPE, "n": PINK, "e": PIXEL_HOLE}
 
-# ペンギン penguin — dark body, white belly, orange beak and feet
+# ペンギン penguin — blue neon body, small feet, and a clean white belly
 PENGUIN = [
     "................",
     "......dddd......",
     ".....dkkkkd.....",
     "....dkkkkkkd....",
-    "....dkekkekd....",
-    "...dkkkookkkd...",
+    "....dkeakked....",
+    "...dkkkoakkkd...",
     "...dkkwwwwkkd...",
     "..dkkkwwwwkkkd..",
     "..dkkkwwwwkkkd..",
@@ -163,26 +165,26 @@ PENGUIN = [
     "....dkkwwkkd....",
     ".....dkkkkd.....",
     "......dddd......",
-    ".....oo..oo.....",
-    "....doo..ood....",
+    "......o..o......",
+    "................",
     "................",
 ]
-PENGUIN_PAL = {"k": NAVY, "w": SNOW, "o": ORANGE, "d": PIXEL_INK, "e": PIXEL_HOLE}
+PENGUIN_PAL = {"k": NAVY, "a": NEON_CYAN, "w": SNOW, "o": ORANGE, "d": NAVY_D, "e": PIXEL_HOLE}
 
 # モアイ moai — stone head with heavy brow, long nose and lips
 MOAI = [
     "................",
-    ".....dddddd.....",
-    "....dssssssd....",
-    "...dsssllsssd...",
-    "...dssddddssd...",
-    "...dssdeesssd...",
-    "...dssssddsssd..",
-    "...dssssdssssd..",
-    "...dssssdssssd..",
-    "..dssssddddsd...",
+    "....ddddddd.....",
+    "...dssssssdd....",
+    "..dssssssssdd...",
+    "..dssddddsssd...",
+    "..dsseesssssd...",
+    "..dssssddsssd...",
+    "..dssssdssssd...",
+    "..dssssdssssd...",
+    "..dssddddsssd...",
     "..dsssssssssd...",
-    "..dsssddddssd...",
+    "..dssddddsssd...",
     "...dsssssssd....",
     "....ddddddd.....",
     "................",
@@ -190,41 +192,20 @@ MOAI = [
 ]
 MOAI_PAL = {"s": STONE_M, "l": STONE_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
 
-# ピラミッド pyramid — stepped triangle with brick cuts
-PYRAMID = [
-    "................",
-    ".......d........",
-    "......dgd.......",
-    ".....dgggd......",
-    "....dgggggd.....",
-    "...dggdggggd....",
-    "..dggggdggggd...",
-    ".dggdggggdgggd..",
-    "dggggdggggdgggd.",
-    "dggdggggdgggggd.",
-    "dgggggggggggggd.",
-    "dddddddddddddddd",
-    "................",
-    "................",
-    "................",
-    "................",
-]
-PYRAMID_PAL = {"g": SAND, "d": PIXEL_INK}
-
 # すべすべまんじゅうがに subesube-manjugani — round shell, claws and legs
 SUBESUBE_MANJUGANI = [
     "................",
-    "..dd........dd..",
-    ".dccd......dccd.",
-    ".dcld......dlcd.",
-    "..dccd....dccd..",
-    "...ddccccdd.....",
+    "...dd......dd...",
+    "..dcld....dlcd..",
+    "..dcld....dlcd..",
+    "...dddccccddd...",
     "..dccccccccd....",
-    ".dccceccceccd...",
-    ".dcccccccccccd..",
-    "..dccccccccd....",
-    ".d.d.d....d.d.d.",
-    "d.d.d......d.d.d",
+    ".dccecccccecd...",
+    ".dccccccccccd...",
+    "..dcccllcccd....",
+    "...dccccccd.....",
+    "..d.d....d.d....",
+    ".d.d......d.d...",
     "................",
     "................",
     "................",
@@ -508,7 +489,6 @@ def main():
         ("emoji", "uribo", URIBO, URIBO_PAL, "uribo", None),
         ("emoji", "penguin", PENGUIN, PENGUIN_PAL, "penguin", None),
         ("emoji", "moai", MOAI, MOAI_PAL, "moai", None),
-        ("emoji", "pyramid", PYRAMID, PYRAMID_PAL, "pyramid", None),
         ("emoji", "subesube-manjugani", SUBESUBE_MANJUGANI, SUBESUBE_MANJUGANI_PAL, "subesube-manjugani", None),
         ("emoji", "cactus", CACTUS, CACTUS_PAL, "cactus", None),
         ("icons", "search", SEARCH, ICON_PAL, "search", None),

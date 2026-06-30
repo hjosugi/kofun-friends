@@ -40,7 +40,6 @@ CHARACTERS = [
     ("uribo", lambda: emoji_pixels("uribo")),
     ("penguin", lambda: emoji_pixels("penguin")),
     ("moai", lambda: emoji_pixels("moai")),
-    ("pyramid", lambda: emoji_pixels("pyramid")),
     ("subesube-manjugani", lambda: emoji_pixels("subesube-manjugani")),
     ("cactus", lambda: emoji_pixels("cactus")),
 ]

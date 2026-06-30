@@ -261,7 +261,7 @@ def cast_svg():
         r += text_centered(name, sx + stage_w // 2, stage_y + stage_w + 22, 6, color)
 
     # item strip along the bottom
-    items = ["haniwa", "uribo", "penguin", "moai", "pyramid", "subesube-manjugani", "cactus"]
+    items = ["haniwa", "uribo", "penguin", "moai", "subesube-manjugani", "cactus"]
     iscale = 5
     isz = P.N * iscale
     igap = 26
@@ -323,7 +323,6 @@ def grid_svg():
                                       (dm("peck"), "PECK")]),
         ("FRIENDS", ACCENT2, 5, [(em("haniwa"), "HANIWA"), (em("uribo"), "URIBO"),
                                   (em("penguin"), "PENGUIN"), (em("moai"), "MOAI"),
-                                  (em("pyramid"), "PYRAMID"),
                                   (em("subesube-manjugani"), "CRAB"),
                                   (em("cactus"), "CACTUS")]),
     ]

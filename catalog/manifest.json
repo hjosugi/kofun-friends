@@ -342,42 +342,6 @@
       ]
     },
     {
-      "source": "assets/motion/gif/pyramid-motion-pack.gif",
-      "category": "motion",
-      "tags": ["motion", "gif", "pyramid", "animation", "study"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
-      ]
-    },
-    {
-      "source": "assets/motion/gif/pyramid-turntable.gif",
-      "category": "motion",
-      "tags": ["motion", "gif", "pyramid", "angle", "turntable"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
-      ]
-    },
-    {
-      "source": "assets/motion/sheets/pyramid-motion-sheet.png",
-      "category": "motion",
-      "tags": ["motion", "sheet", "pyramid", "animation", "study"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
-      ]
-    },
-    {
-      "source": "assets/motion/sheets/pyramid-angle-strip.png",
-      "category": "motion",
-      "tags": ["motion", "sheet", "pyramid", "angle", "turntable"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
-      ]
-    },
-    {
       "source": "assets/motion/gif/subesube-manjugani-motion-pack.gif",
       "category": "motion",
       "tags": ["motion", "gif", "subesube-manjugani", "animation", "study"],
@@ -689,15 +653,6 @@
       "source": "assets/emoji/svg/moai.svg",
       "category": "emoji",
       "tags": ["emoji", "moai", "stone", "statue"],
-      "license": "CC-BY-4.0",
-      "outputs": [
-        { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
-      ]
-    },
-    {
-      "source": "assets/emoji/svg/pyramid.svg",
-      "category": "emoji",
-      "tags": ["emoji", "pyramid", "stone", "triangle"],
       "license": "CC-BY-4.0",
       "outputs": [
         { "op": "sizes", "sizes": [32, 64, 128, 256], "format": "png", "outdir": "dist/emoji" }
