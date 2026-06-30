@@ -46,6 +46,32 @@ TAN = "#ffe040"
 STONE = "#9aa8c8"
 STONE_D = "#2a2445"
 
+# Muted small-RPG palette for the side characters. Kofun-kun / Dochicken-san
+# stay in gen_sprites.py; these colours only affect the emoji friends.
+PIXEL_INK = "#241a24"
+PIXEL_HOLE = "#08070d"
+CLAY = "#b97854"
+CLAY_L = "#d99572"
+CLAY_D = "#7a4a34"
+BOAR = "#8e5f3c"
+BOAR_D = "#5f382b"
+BOAR_STRIPE = "#e1b36b"
+PINK = "#f28b93"
+NAVY = "#16304f"
+NAVY_D = "#0f1f36"
+SNOW = "#f0f2ee"
+STONE_M = "#8d93a6"
+STONE_L = "#b6bccb"
+STONE_S = "#5d6172"
+SAND = "#d5a24c"
+SAND_L = "#f0c86b"
+SAND_S = "#8f6130"
+CRAB = "#d84a35"
+CRAB_L = "#ff8060"
+GREEN = "#4aa35f"
+GREEN_L = "#73c779"
+GREEN_S = "#2d7048"
+
 
 def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
     """Emit a crispEdges SVG. palette: char -> hex (omit '.' = transparent)."""
@@ -80,39 +106,39 @@ def svg(name, grid, palette, label, viewbox=N, px=128, hotspot=None):
 # EMOJI (16x16) — small friends with strong, readable silhouettes
 # ===========================================================================
 
-# 埴輪 haniwa — hat brim, eye holes, mouth, arms, and hollow legs
+# 埴輪 haniwa — simple clay idol with a strong silhouette and hollow eyes
 HANIWA = [
     "................",
     ".....dddddd.....",
-    "....dggggggd....",
-    "...dggggggggd...",
-    "...dggegggegd...",
-    "...dgggeeggd....",
-    "....dgggggd.....",
-    ".....dggd.......",
-    "..ddggggggggdd..",
-    ".dggggggggggggd.",
-    "...dggggggggd...",
-    "...dggggggggd...",
-    "..dggggggggggd..",
-    "..dggg....gggd..",
-    ".dgggd....dgggd.",
+    "....dccccccd....",
+    "...dccccccccd...",
+    "...dcceccedcd...",
+    "...dcccecccd....",
+    "....dcccccd.....",
+    "..ddccccccccdd..",
+    ".dccccccccccccd.",
+    ".dccdccccccdccd.",
+    "..dcccccclcccd..",
+    "..dccccccccccd..",
+    "..dcccd..dcccd..",
+    "..dccd....dccd..",
+    "...dd......dd...",
     "................",
 ]
-HANIWA_PAL = {"g": ORANGE, "d": VIOLET_D, "e": BG}
+HANIWA_PAL = {"c": CLAY, "l": CLAY_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
 
 # うり坊 uribo — side-view striped boar piglet
 URIBO = [
     "................",
     "................",
     "....dd.dd.......",
-    "...dbbdbbdd.....",
-    "..dbttbttbbbd...",
-    ".dbbtbbtbbbbbdd.",
-    ".dbbbbbbbbbbbeed",
-    ".dbbtbbtbbbbnnnd",
-    "..dbttbttbbbbd..",
-    "...dddddddddd...",
+    "...dttdttdd.....",
+    "..dccctcccdd....",
+    ".dccctcccccdd...",
+    "dccctccccecnnd..",
+    "dccctccccccnnd..",
+    ".dcccctccccdd...",
+    "..dddddddddd....",
     "...d.d...d.d....",
     "...d.d...d.d....",
     "................",
@@ -120,49 +146,49 @@ URIBO = [
     "................",
     "................",
 ]
-URIBO_PAL = {"b": BROWN, "d": BROWN_D, "t": TAN, "n": CORAL, "e": BG}
+URIBO_PAL = {"c": BOAR, "d": PIXEL_INK, "t": BOAR_STRIPE, "n": PINK, "e": PIXEL_HOLE}
 
 # ペンギン penguin — dark body, white belly, orange beak and feet
 PENGUIN = [
     "................",
-    "......kkkk......",
-    ".....kkkkkk.....",
-    "....kkwkkwkk....",
-    "....kkkoookk....",
-    "...kkkkkkkkkk...",
-    "..kkkkwwwwkkkk..",
-    ".kkkkkwwwwkkkkk.",
-    ".kkkkkwwwwkkkkk.",
-    "..kkkkwwwwkkkk..",
-    "...kkkwwwwkkk...",
-    "....kkkwwkkk....",
-    ".....kkkkkk.....",
-    "....oo....oo....",
-    "...ooo....ooo...",
+    "......dddd......",
+    ".....dkkkkd.....",
+    "....dkkkkkkd....",
+    "....dkekkekd....",
+    "...dkkkookkkd...",
+    "...dkkwwwwkkd...",
+    "..dkkkwwwwkkkd..",
+    "..dkkkwwwwkkkd..",
+    "...dkkwwwwkkd...",
+    "....dkkwwkkd....",
+    ".....dkkkkd.....",
+    "......dddd......",
+    ".....oo..oo.....",
+    "....doo..ood....",
     "................",
 ]
-PENGUIN_PAL = {"k": "#0d2240", "w": WHITE, "o": ORANGE}
+PENGUIN_PAL = {"k": NAVY, "w": SNOW, "o": ORANGE, "d": PIXEL_INK, "e": PIXEL_HOLE}
 
 # モアイ moai — stone head with heavy brow, long nose and lips
 MOAI = [
     "................",
-    "....dddddddd....",
-    "...dssssssssd...",
-    "..dssssssssssd..",
-    "..dssddddssssd..",
-    "..dssdeedssssd..",
-    "..dssssssssssd..",
-    "..dsssdssdsssd..",
-    "..dsssdssdsssd..",
-    "..dssssddddssd..",
-    "..dssssssssssd..",
-    "..dssddddddssd..",
-    "..dssssssssssd..",
-    "...dssssssssd...",
-    "....dddddddd....",
+    ".....dddddd.....",
+    "....dssssssd....",
+    "...dsssllsssd...",
+    "...dssddddssd...",
+    "...dssdeesssd...",
+    "...dssssddsssd..",
+    "...dssssdssssd..",
+    "...dssssdssssd..",
+    "..dssssddddsd...",
+    "..dsssssssssd...",
+    "..dsssddddssd...",
+    "...dsssssssd....",
+    "....ddddddd.....",
+    "................",
     "................",
 ]
-MOAI_PAL = {"s": STONE, "d": STONE_D, "e": BG}
+MOAI_PAL = {"s": STONE_M, "l": STONE_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
 
 # ピラミッド pyramid — stepped triangle with brick cuts
 PYRAMID = [
@@ -183,28 +209,28 @@ PYRAMID = [
     "................",
     "................",
 ]
-PYRAMID_PAL = {"g": GOLD, "d": ORANGE}
+PYRAMID_PAL = {"g": SAND, "d": PIXEL_INK}
 
 # すべすべまんじゅうがに subesube-manjugani — round shell, claws and legs
 SUBESUBE_MANJUGANI = [
     "................",
+    "..dd........dd..",
+    ".dccd......dccd.",
+    ".dcld......dlcd.",
+    "..dccd....dccd..",
+    "...ddccccdd.....",
+    "..dccccccccd....",
+    ".dccceccceccd...",
+    ".dcccccccccccd..",
+    "..dccccccccd....",
+    ".d.d.d....d.d.d.",
+    "d.d.d......d.d.d",
     "................",
-    ".....cccccc.....",
-    "...cccccccccc...",
-    "..cccccccccccc..",
-    ".occcaccccaccco.",
-    "o.cccccccccccc.o",
-    ".occcccccccccco.",
-    "..ccccaccccacc..",
-    "...cccccccccc...",
-    "....dccccccd....",
-    ".....dddddd.....",
-    ".o.o........o.o.",
-    "oo..........oo..",
+    "................",
     "................",
     "................",
 ]
-SUBESUBE_MANJUGANI_PAL = {"c": CREAM, "d": CREAM_D, "o": ORANGE, "e": BG, "a": ACCENT}
+SUBESUBE_MANJUGANI_PAL = {"c": CRAB, "l": CRAB_L, "d": PIXEL_INK, "e": PIXEL_HOLE}
 
 # さぼてん cactus — saguaro silhouette, neon flower, chunky arms
 CACTUS = [
@@ -212,20 +238,20 @@ CACTUS = [
     ".......ff.......",
     "......dggd......",
     "......dggd......",
-    "...dd.dggd.dd...",
-    "..dggddggddggd..",
-    "..dgggdggdgggd..",
-    "...dggdggdggd...",
-    "....ddggggdd....",
-    "......dggd......",
-    "......dggd......",
-    "......dggd......",
+    "..dd..dggd..dd..",
+    ".dggd.dggd.dggd.",
+    ".dggddggggddggd.",
+    "..dggdggggdggd..",
+    "...ddggggggdd...",
+    ".....dglggd.....",
+    ".....dggggd.....",
+    ".....dggggd.....",
     ".....dggggd.....",
     "....dggggggd....",
-    ".....dddddd.....",
+    "....dddddddd....",
     "................",
 ]
-CACTUS_PAL = {"g": ACID, "d": ACCENT2, "f": CORAL}
+CACTUS_PAL = {"g": GREEN, "l": GREEN_L, "d": PIXEL_INK, "f": CORAL}
 
 
 # ===========================================================================

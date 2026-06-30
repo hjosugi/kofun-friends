@@ -4,7 +4,7 @@
 //! and the derived outputs that should be generated into `dist/`. This keeps the
 //! source tree authoritative and the generated tree reproducible.
 
-use crate::cli::{AniArgs, BatchArgs, CurArgs, Filter, OutFormat};
+use crate::cli::{AniArgs, BatchArgs, CurArgs, Filter, OutFormat, ResizeArgs};
 use crate::cursor;
 use crate::raster;
 use crate::svg;
@@ -211,6 +211,18 @@ fn process_asset(asset: &Asset, base_outdir: &str, dry_run: bool) -> Result<()> 
                 if dry_run {
                     continue;
                 }
+                if raster::is_gif(&asset.source) && fmt == OutFormat::Gif {
+                    raster::resize(&ResizeArgs {
+                        input: asset.source.clone(),
+                        output: Some(dest),
+                        width: *width,
+                        height: *height,
+                        scale: *scale,
+                        exact: *exact,
+                        filter: filter.unwrap_or_default(),
+                    })?;
+                    continue;
+                }
                 let f = filter.unwrap_or_default().to_image();
                 let img = image::open(&asset.source)?;
                 let (tw, th) =
@@ -350,4 +362,74 @@ fn infer_format(path: &Path) -> OutFormat {
 fn log_plan(op: &str, src: &Path, dest: &Path, dry_run: bool) {
     let tag = if dry_run { "plan" } else { "make" };
     println!("  [{tag}] {op}: {} -> {}", src.display(), dest.display());
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use image::codecs::gif::{GifDecoder, GifEncoder, Repeat};
+    use image::{AnimationDecoder, Delay, Frame, Rgba, RgbaImage};
+    use std::fs::{self, File};
+    use std::io::{BufReader, BufWriter};
+    use std::time::{SystemTime, UNIX_EPOCH};
+
+    fn temp_case_dir(name: &str) -> PathBuf {
+        let stamp = SystemTime::now()
+            .duration_since(UNIX_EPOCH)
+            .unwrap()
+            .as_nanos();
+        std::env::temp_dir().join(format!("kofun-convert-{name}-{stamp}"))
+    }
+
+    fn write_test_gif(path: &Path) -> Result<()> {
+        util::ensure_parent(path)?;
+        let file = BufWriter::new(File::create(path)?);
+        let mut encoder = GifEncoder::new(file);
+        encoder.set_repeat(Repeat::Infinite)?;
+        for colour in [Rgba([255, 0, 144, 255]), Rgba([0, 255, 255, 255])] {
+            let img = RgbaImage::from_pixel(2, 2, colour);
+            encoder.encode_frame(Frame::from_parts(
+                img,
+                0,
+                0,
+                Delay::from_numer_denom_ms(80, 1),
+            ))?;
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn batch_resize_preserves_animated_gif_frames() -> Result<()> {
+        let root = temp_case_dir("gif-resize");
+        let input = root.join("src").join("anim.gif");
+        let outdir = root.join("dist");
+        write_test_gif(&input)?;
+
+        let asset = Asset {
+            source: input.clone(),
+            category: Some("test".into()),
+            tags: vec!["gif".into()],
+            license: Some("test".into()),
+            outputs: vec![Output::Resize {
+                width: Some(4),
+                height: None,
+                scale: None,
+                exact: false,
+                format: Some(OutFormat::Gif),
+                filter: Some(Filter::Nearest),
+                outdir: Some(outdir.to_string_lossy().into_owned()),
+            }],
+        };
+
+        process_asset(&asset, "dist", false)?;
+        let output = outdir.join("anim.gif");
+        let decoder = GifDecoder::new(BufReader::new(File::open(output)?))?;
+        let frames = decoder.into_frames().collect_frames()?;
+        assert_eq!(frames.len(), 2);
+        assert_eq!(frames[0].buffer().width(), 4);
+        assert_eq!(frames[0].buffer().height(), 4);
+
+        fs::remove_dir_all(root).ok();
+        Ok(())
+    }
 }

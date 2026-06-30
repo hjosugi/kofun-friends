@@ -1,15 +1,13 @@
-# motion — 動き・角度の検討素材
+# motion
 
-KOFUN/DOCHICKEN本体の正規スプライトとは別枠の、動き検討用アセットです。
-`scripts/gen_motion_studies.py` が生成します。
+動きと角度の検討用素材です。正規スプライトとは別枠です。
 
-- `gif/`: キャラごとの確認用GIF。
-  - `*-motion-pack.gif`: bob / hop / dash / turn / wiggle をまとめて再生。
-  - `*-turntable.gif`: front / side / back / side の角度確認。
-- `sheets/`: 24x24 native pixel のフレームシート。
-  - `*-motion-sheet.png`: 5行 x 6フレーム。行は bob, hop, dash, turn, wiggle。
-  - `*-angle-strip.png`: front, right-ish, back-ish, left-ish。
-- `board/motion-board.png`: 全キャラ・全モーションを一画面で見るためのコンタクトシート。
+- `gif/`: 動き確認
+- `sheets/`: フレームシート
+- `board/`: 一覧
 
-ここで作る差分は「候補」です。採用する動きが決まったら、必要なものだけ
-`assets/<character>/` やアプリ側のアニメーション定義へ昇格します。
+生成:
+
+```bash
+python3 scripts/gen_motion_studies.py
+```
