@@ -117,6 +117,340 @@
     },
 
     {
+      "source": "assets/motion/board/motion-board.png",
+      "category": "motion",
+      "tags": ["motion", "board", "animation", "angles", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 992, "format": "png", "filter": "nearest", "outdir": "dist/motion/board" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/kofun-kun-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "kofun-kun", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/kofun-kun-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "kofun-kun", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/kofun-kun-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "kofun-kun", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/kofun-kun-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "kofun-kun", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/dochicken-san-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "dochicken-san", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/dochicken-san-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "dochicken-san", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/dochicken-san-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "dochicken-san", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/dochicken-san-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "dochicken-san", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/haniwa-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "haniwa", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/haniwa-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "haniwa", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/haniwa-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "haniwa", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/haniwa-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "haniwa", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/uribo-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "uribo", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/uribo-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "uribo", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/uribo-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "uribo", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/uribo-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "uribo", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/penguin-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "penguin", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/penguin-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "penguin", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/penguin-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "penguin", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/penguin-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "penguin", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/moai-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "moai", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/moai-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "moai", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/moai-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "moai", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/moai-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "moai", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/pyramid-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "pyramid", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/pyramid-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "pyramid", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/pyramid-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "pyramid", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/pyramid-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "pyramid", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/subesube-manjugani-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "subesube-manjugani", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/subesube-manjugani-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "subesube-manjugani", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/subesube-manjugani-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "subesube-manjugani", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/subesube-manjugani-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "subesube-manjugani", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/cactus-motion-pack.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "cactus", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/gif/cactus-turntable.gif",
+      "category": "motion",
+      "tags": ["motion", "gif", "cactus", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 96, "format": "gif", "filter": "nearest", "outdir": "dist/motion/gif" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/cactus-motion-sheet.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "cactus", "animation", "study"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 576, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+    {
+      "source": "assets/motion/sheets/cactus-angle-strip.png",
+      "category": "motion",
+      "tags": ["motion", "sheet", "cactus", "angle", "turntable"],
+      "license": "CC-BY-4.0",
+      "outputs": [
+        { "op": "resize", "width": 384, "format": "png", "filter": "nearest", "outdir": "dist/motion/sheets" }
+      ]
+    },
+
+    {
       "source": "assets/backgrounds/svg/neon-alley.svg",
       "category": "backgrounds",
       "tags": ["background", "pixel", "cyberpunk", "neon", "alley"],

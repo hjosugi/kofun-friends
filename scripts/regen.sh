@@ -10,6 +10,7 @@ python3 scripts/gen_sprites.py
 python3 scripts/gen_pixel_svgs.py
 python3 scripts/gen_lineup.py
 python3 scripts/gen_backgrounds.py
+python3 scripts/gen_motion_studies.py
 
 echo ">> building kofun-convert (release)…"
 cargo build --release --manifest-path tools/converter/Cargo.toml
