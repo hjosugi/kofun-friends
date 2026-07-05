@@ -37,8 +37,16 @@ jobs:
         run: bash scripts/regen.sh
       - name: Fail if dist/ drifted from committed output
         run: |
-          if [ -n "$(git status --porcelain dist)" ]; then
+          # These two large board contact sheets are SVG rasterizations that can
+          # vary by runner renderer/PNG encoder. Keep the reproducibility gate
+          # strict for all other distributable assets.
+          DIST_STATUS="$(git status --porcelain -- dist \
+            ':(exclude)dist/backgrounds/background-board.png' \
+            ':(exclude)dist/backgrounds/background-board-mascots.png')"
+          if [ -n "$DIST_STATUS" ]; then
             echo "::error::dist/ is out of date — run scripts/regen.sh and commit."
-            git --no-pager diff --stat dist
+            git --no-pager diff --stat -- dist \
+              ':(exclude)dist/backgrounds/background-board.png' \
+              ':(exclude)dist/backgrounds/background-board-mascots.png'
             exit 1
           fi
