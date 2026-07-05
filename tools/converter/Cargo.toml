@@ -3,7 +3,7 @@ name = "kofun-convert"
 version = "0.1.0"
 edition = "2021"
 description = "Native asset converter for the kofun-friends asset library (resize / format convert / SVG rasterize / GIF)"
-license = "MIT"
+license = "0BSD"
 repository = "https://github.com/hjosugi/hjosugi-hub"
 readme = "README.md"
 

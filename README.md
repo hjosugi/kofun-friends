@@ -55,3 +55,7 @@ tools/converter/target/release/kofun-convert rasterize in.svg --width 512
 - 素材: `catalog/manifest.json` の `license`
 - 既定: CC BY 4.0
 - converter: MIT
+
+## License
+
+0BSD. You can use, copy, modify, and distribute this project for almost any purpose.
