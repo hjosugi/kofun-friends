@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](material-sites.md) | [日本語](material-sites.ja.md)
+
 # 素材サイト
 
 外部素材を入れる前に、再配布・改変・商用利用を確認します。

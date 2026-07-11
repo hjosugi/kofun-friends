@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](adding-assets.md) | [日本語](adding-assets.ja.md)
+
 # 素材追加
 
 ## 手順

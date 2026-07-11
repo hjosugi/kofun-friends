@@ -5,7 +5,7 @@
 
 `kofun-friends` 用の素材コンバータです。
 
-## Build
+## ビルド
 
 ```bash
 cargo build --release
@@ -20,13 +20,13 @@ kofun-convert batch
 # SVG -> PNG
 kofun-convert rasterize in.svg --width 512
 
-# PNG/GIF resize。GIFは全フレーム保持
+# PNG/GIF のリサイズ。GIFは全フレームを保持
 kofun-convert resize in.gif --width 96 --filter nearest
 
 # 複数サイズ
 kofun-convert sizes in.svg --sizes 32,64,128 --outdir dist/emoji
 
-# Windows cursor
+# Windowsカーソル
 kofun-convert cur pointer.svg --sizes 32,48 --hotspot-x 1 --hotspot-y 1
 kofun-convert ani anim.gif --size 48 --hotspot-x 24 --hotspot-y 24
 
@@ -34,7 +34,7 @@ kofun-convert ani anim.gif --size 48 --hotspot-x 24 --hotspot-y 24
 kofun-convert info in.png
 ```
 
-## Test
+## テスト
 
 ```bash
 cargo test

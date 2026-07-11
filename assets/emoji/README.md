@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](README.md) | [日本語](README.ja.md)
+
 # emoji — 絵文字セット
 
 ベクター原本を `svg/` に置き、`catalog/manifest.json` の `sizes` op で
