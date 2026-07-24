@@ -35,11 +35,24 @@ tools/converter/target/release/kofun-convert resize in.gif --width 96 --filter n
 tools/converter/target/release/kofun-convert rasterize in.svg --width 512
 ```
 
+## 遊ぶ
+
+`games/` には、低スペックPCでも試しやすい7種類のゲームエンジン／
+フレームワーク向けミニゲームがあります。
+
+```bash
+python3 games/sync_assets.py
+```
+
+素材を同期したあと、各プロジェクトを起動してください。対応環境と
+起動方法は [games/README.md](games/README.md) にまとめています。
+
 ## 置き場
 
 - `assets/`: 原本
 - `dist/`: 配布物
 - `catalog/manifest.json`: 生成設定
+- `games/`: 7エンジンで遊べるサンプルゲーム
 - `scripts/`: 生成スクリプト
 - `tools/converter/`: Rust製コンバータ
 - `docs/`: 最小メモ

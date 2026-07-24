@@ -1,0 +1,9 @@
+images {
+  image: "/assets/haniwa.png"
+}
+images {
+  image: "/assets/dochicken.png"
+}
+margin: 0
+inner_padding: 0
+extrude_borders: 0

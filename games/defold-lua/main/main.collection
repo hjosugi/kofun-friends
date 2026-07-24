@@ -1,0 +1,5 @@
+name: "main"
+instances {
+  id: "game"
+  prototype: "/main/game.go"
+}
