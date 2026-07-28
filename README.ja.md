@@ -51,6 +51,7 @@ tools/converter/target/release/kofun-convert rasterize in.svg --width 512
 
 - 素材追加: [docs/adding-assets.md](docs/adding-assets.md)
 - 素材サイト: [docs/material-sites.md](docs/material-sites.md)
+- GitHub Issue → Daimon 自動投稿: [docs/daimon-issue-posting.md](docs/daimon-issue-posting.md)
 - converter: [tools/converter/README.md](tools/converter/README.md)
 
 ## ライセンス

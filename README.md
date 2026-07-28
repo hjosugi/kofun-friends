@@ -51,6 +51,7 @@ tools/converter/target/release/kofun-convert rasterize in.svg --width 512
 
 - Adding assets: [docs/adding-assets.md](docs/adding-assets.md)
 - Asset sites: [docs/material-sites.md](docs/material-sites.md)
+- Posting GitHub Issues to Daimon automatically: [docs/daimon-issue-posting.md](docs/daimon-issue-posting.md)
 - converter: [tools/converter/README.md](tools/converter/README.md)
 
 ## Asset licensing

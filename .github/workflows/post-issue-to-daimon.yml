@@ -1,0 +1,55 @@
+name: Post issue to Daimon
+
+on:
+  issues:
+    types: [opened, labeled]
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: Existing GitHub issue number to deliver or safely retry
+        required: true
+        type: string
+      dry_run:
+        description: Validate and format the issue without calling Daimon
+        required: true
+        default: true
+        type: boolean
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daimon-issue-${{ github.repository }}-${{ github.event.issue.number || inputs.issue_number }}
+  cancel-in-progress: false
+
+jobs:
+  post:
+    name: Deliver eligible issue
+    if: github.event_name != 'workflow_dispatch' || github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: daimon-production
+    steps:
+      - name: Check out the trusted default-branch automation
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+          ref: ${{ github.event.repository.default_branch }}
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+
+      - name: Post or safely skip the issue
+        env:
+          DAIMON_ACCOUNT: ${{ secrets.DAIMON_ACCOUNT }}
+          DAIMON_API_URL: ${{ vars.DAIMON_API_URL }}
+          DAIMON_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          DAIMON_IDEMPOTENCY_SUPPORTED: ${{ vars.DAIMON_IDEMPOTENCY_SUPPORTED || 'false' }}
+          DAIMON_ISSUE_NUMBER: ${{ github.event_name == 'workflow_dispatch' && inputs.issue_number || '' }}
+          DAIMON_PASSWORD: ${{ secrets.DAIMON_PASSWORD }}
+          DAIMON_POST_LABEL: ${{ vars.DAIMON_POST_LABEL || 'daimon-post' }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/post_issue_to_daimon.py
