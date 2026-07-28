@@ -1,4 +1,7 @@
-# emoji — 絵文字セット
+<!-- i18n: language-switcher -->
+[English](README.md) | [日本語](README.ja.md)
 
-ベクター原本を `svg/` に置き、`catalog/manifest.json` の `sizes` op で
-`dist/emoji/<name>_<size>.png` を生成します（推奨: 32/64/128px）。
+# emoji — emoji set
+
+Put the vector originals in `svg/`, and the `sizes` op in `catalog/manifest.json`
+generates `dist/emoji/<name>_<size>.png` (32/64/128px recommended).

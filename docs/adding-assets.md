@@ -1,20 +1,23 @@
-# 素材追加
+<!-- i18n: language-switcher -->
+[English](adding-assets.md) | [日本語](adding-assets.ja.md)
 
-## 手順
+# Adding assets
 
-1. 原本を `assets/<category>/` に置く。
-2. `catalog/manifest.json` に追加する。
-3. `scripts/regen.sh` を実行する。
-4. `assets/` と `dist/` を一緒にコミットする。
+## Steps
 
-## ルール
+1. Put the original in `assets/<category>/`.
+2. Add it to `catalog/manifest.json`.
+3. Run `scripts/regen.sh`.
+4. Commit `assets/` and `dist/` together.
 
-- ファイル名は kebab-case。
-- ドット絵の拡大は `"filter": "nearest"`。
-- 新規素材は `license` を必ず書く。
-- 外部素材は元URLとライセンスを同じディレクトリに残す。
+## Rules
 
-## 例
+- File names are kebab-case.
+- Scale pixel art with `"filter": "nearest"`.
+- Always record a `license` for a new asset.
+- For external material, keep the source URL and licence in the same directory.
+
+## Example
 
 ```json
 {
