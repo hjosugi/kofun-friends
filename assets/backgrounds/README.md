@@ -3,13 +3,13 @@
 
 # backgrounds
 
-- `svg/`: 生成背景
-- `cc0/`: ライセンス確認済み外部素材
+- `svg/`: generated backgrounds
+- `cc0/`: external material with a confirmed licence
 
-生成:
+Generate:
 
 ```bash
 python3 scripts/gen_backgrounds.py
 ```
 
-素材元は [docs/material-sites.md](../../docs/material-sites.md)。
+Sources are listed in [docs/material-sites.md](../../docs/material-sites.md).

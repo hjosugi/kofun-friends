@@ -3,7 +3,7 @@
 
 # kofun-convert
 
-`kofun-friends` 用の素材コンバータです。
+The asset converter for `kofun-friends`.
 
 ## Build
 
@@ -11,26 +11,26 @@
 cargo build --release
 ```
 
-## よく使うコマンド
+## Commands you will use often
 
 ```bash
-# catalog/manifest.json から全部作る
+# build everything from catalog/manifest.json
 kofun-convert batch
 
 # SVG -> PNG
 kofun-convert rasterize in.svg --width 512
 
-# PNG/GIF resize。GIFは全フレーム保持
+# resize a PNG/GIF. Every frame of a GIF is kept
 kofun-convert resize in.gif --width 96 --filter nearest
 
-# 複数サイズ
+# several sizes at once
 kofun-convert sizes in.svg --sizes 32,64,128 --outdir dist/emoji
 
 # Windows cursor
 kofun-convert cur pointer.svg --sizes 32,48 --hotspot-x 1 --hotspot-y 1
 kofun-convert ani anim.gif --size 48 --hotspot-x 24 --hotspot-y 24
 
-# 情報表示
+# show information
 kofun-convert info in.png
 ```
 
