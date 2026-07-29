@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](README.en.md) | [日本語](README.md)
+
 # motion
 
 動きと角度の検討用素材です。正規スプライトとは別枠です。
