@@ -1,0 +1,3 @@
+**/assets/*.png
+phaser-typescript/node_modules/
+phaser-typescript/dist/

@@ -1,0 +1,96 @@
+local TARGET_SCORE = 12
+local ROUND_SECONDS = 30
+
+local function random_position()
+    return vmath.vector3(math.random(115, 845), math.random(125, 395), 0)
+end
+
+local function update_status(self)
+    local text = string.format("SCORE %02d / %02d       TIME %04.1f",
+        self.score, TARGET_SCORE, math.max(0, self.time_left))
+    gui.set_text(self.status, text)
+end
+
+local function separate_nodes(self)
+    gui.set_position(self.target, random_position())
+    repeat
+        gui.set_position(self.decoy, random_position())
+    until vmath.length(gui.get_position(self.target) -
+        gui.get_position(self.decoy)) > 150
+end
+
+local function reset_game(self)
+    self.score = 0
+    self.time_left = ROUND_SECONDS
+    self.active = true
+    self.decoy_timer = 0
+    gui.set_enabled(self.target, true)
+    gui.set_enabled(self.decoy, true)
+    gui.set_text(self.message, "Tap the haniwa. Dochicken steals 3 seconds!")
+    separate_nodes(self)
+    update_status(self)
+end
+
+local function finish_game(self, won)
+    self.active = false
+    gui.set_enabled(self.target, false)
+    gui.set_enabled(self.decoy, false)
+    if won then
+        gui.set_text(self.message, "PATROL COMPLETE! Tap anywhere to replay")
+    else
+        gui.set_text(self.message, "TIME UP! Tap anywhere to retry")
+    end
+end
+
+function init(self)
+    msg.post(".", "acquire_input_focus")
+    math.randomseed(20260725)
+    self.target = gui.get_node("target")
+    self.decoy = gui.get_node("decoy")
+    self.status = gui.get_node("status")
+    self.message = gui.get_node("message")
+    reset_game(self)
+end
+
+function update(self, dt)
+    if not self.active then
+        return
+    end
+
+    self.time_left = self.time_left - dt
+    self.decoy_timer = self.decoy_timer + dt
+    if self.decoy_timer >= 1.1 then
+        self.decoy_timer = 0
+        gui.set_position(self.decoy, random_position())
+    end
+
+    if self.time_left <= 0 then
+        self.time_left = 0
+        finish_game(self, false)
+    end
+    update_status(self)
+end
+
+function on_input(self, action_id, action)
+    if action_id ~= hash("touch") or not action.pressed then
+        return false
+    end
+
+    if not self.active then
+        reset_game(self)
+        return true
+    end
+
+    if gui.pick_node(self.target, action.x, action.y) then
+        self.score = self.score + 1
+        gui.set_position(self.target, random_position())
+        if self.score >= TARGET_SCORE then
+            finish_game(self, true)
+        end
+    elseif gui.pick_node(self.decoy, action.x, action.y) then
+        self.time_left = math.max(0, self.time_left - 3)
+        gui.set_position(self.decoy, random_position())
+    end
+    update_status(self)
+    return true
+end

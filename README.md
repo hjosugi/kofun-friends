@@ -38,11 +38,25 @@ tools/converter/target/release/kofun-convert resize in.gif --width 96 --filter n
 tools/converter/target/release/kofun-convert rasterize in.svg --width 512
 ```
 
+## Playing
+
+`games/` holds mini-games for seven game engines and frameworks, each easy to
+try even on a low-spec PC.
+
+```bash
+python3 games/sync_assets.py
+```
+
+Once the assets are synced, start whichever project you want. Supported
+environments and how to launch each one are collected in
+[games/README.md](games/README.md).
+
 ## Layout
 
 - `assets/`: originals
 - `dist/`: distributables
 - `catalog/manifest.json`: generation settings
+- `games/`: sample games playable on seven engines
 - `scripts/`: generation scripts
 - `tools/converter/`: the Rust converter
 - `docs/`: short notes
